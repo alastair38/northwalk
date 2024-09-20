@@ -9,6 +9,7 @@
 	import clsx from 'clsx';
 	import { asLink } from '@prismicio/client';
 	import { page } from '$app/stores';
+	import Search from './Search.svelte';
 
 	/** @type {import("@prismicio/client").Content.SettingsDocument} */
 	export let settings;
@@ -20,14 +21,15 @@
 	/** @param {import('@prismicio/client').LinkField} link*/
 	const isActive = (link) => {
 		const path = asLink(link);
-
-		return path && $page.url.pathname.includes(path);
+		if (path === $page.url.pathname) {
+			return path;
+		}
 	};
 </script>
 
 <header class="p-4 md:p-6">
 	<nav
-		class="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center"
+		class="text-content mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium md:flex-row md:items-center"
 		aria-label="Main"
 	>
 		<div class="flex items-center justify-between">
@@ -38,7 +40,7 @@
 
 			<button
 				type="button"
-				class="block p-2 text-3xl text-white md:hidden"
+				class="text-content block p-2 text-3xl md:hidden"
 				aria-expanded={isOpen}
 				on:click={toggleOpen}
 			>
@@ -50,14 +52,14 @@
 		<!-- Mobile Nav -->
 		<div
 			class={clsx(
-				'fixed inset-0 z-40 flex flex-col items-end bg-gray-950 pr-4 pt-6 transition-transform duration-300 ease-in-out md:hidden',
+				'bg-base fixed inset-0 z-40 flex flex-col items-end pr-4 pt-6 transition-transform duration-300 ease-in-out md:hidden',
 				isOpen ? 'translate-x-0' : 'translate-x-[100%]'
 			)}
 		>
 			<button
 				aria-expanded={isOpen}
 				type="button"
-				class="block p-2 text-3xl text-white md:hidden"
+				class="text-content block p-2 text-3xl md:hidden"
 				on:click={toggleOpen}
 			>
 				<span class="sr-only">Close</span>
@@ -90,22 +92,22 @@
 		</div>
 
 		<!-- Desktop Nav -->
-		<ul class="hidden gap-6 md:flex">
+		<ul class="hidden items-center gap-6 md:flex">
 			{#each settings.data.navigation as item (item.label)}
 				<li>
 					{#if item.cta_button}
-						<ButtonLink
+						<!-- <ButtonLink
 							field={item.link}
 							on:click={close}
 							aria-current={isActive(item.link) ? 'page' : undefined}
 						>
 							{item.label}
-						</ButtonLink>
+						</ButtonLink> -->
 					{:else}
 						<PrismicLink
 							on:click={close}
 							field={item.link}
-							class="inline-flex min-h-11 items-center"
+							class={`hover:text-content/50 inline-flex items-center rounded-full px-3 py-1 focus-visible:outline focus-visible:outline-offset-2 ${isActive(item.link) ? 'decoration-brand underline' : ''}`}
 							aria-current={isActive(item.link) ? 'page' : undefined}
 						>
 							{item.label}
@@ -113,6 +115,9 @@
 					{/if}
 				</li>
 			{/each}
+			<li class="ml">
+				<Search />
+			</li>
 		</ul>
 	</nav>
 </header>

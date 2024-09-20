@@ -2,47 +2,45 @@
 	import Bounded from '$lib/components/Bounded.svelte';
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import clsx from 'clsx';
-	import { compile } from 'svelte/compiler';
-	import type { CaseStudyDocument } from '../../../prismicio-types';
 
-	/** @type {import("@prismicio/client").Content.CaseStudiesSlice} */
-	export let slice;
-	/** @type {import("@prismicio/client").Content.CaseStudyDocument[]} */
+	import type { CaseStudyDocument } from '../../../prismicio-types';
+	import type { Content } from '@prismicio/client';
+	import Heading2 from '$lib/components/Heading2.svelte';
+	import Link from '$lib/components/Link.svelte';
+
+	export let slice: Content.CaseStudiesSlice;
+
 	export let caseStudies: CaseStudyDocument[] = [];
 </script>
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<h2 class="max-w-2xl text-balance text-center text-5xl font-medium md:text-7xl">
-		<PrismicText field={slice.primary.heading} />
-	</h2>
-	<div class="mx-auto mt-6 max-w-md text-balance text-center text-gray-300">
+	<Heading2 variant="impact" class="max-w-3xl text-center">
+		<PrismicText field={slice.primary.heading} /></Heading2
+	>
+
+	<div class="text-content/80 mx-auto mt-6 max-w-prose text-balance text-center text-lg">
 		<PrismicRichText field={slice.primary.body} />
 	</div>
 
-	<div class="mt-20 grid gap-16">
+	<div class="mt-16 grid gap-16 md:mt-20">
 		{#each caseStudies as caseStudy, index}
 			<div
 				class="group relative grid gap-4 opacity-85 transition-opacity duration-300 hover:cursor-pointer hover:opacity-100 md:grid-cols-2 md:gap-8 lg:grid-cols-3"
 			>
 				<div class="col-span-1 flex flex-col justify-center gap-4">
-					<h3 class="text-4xl">
+					<h3 class="text-xl font-bold md:text-2xl">
 						<PrismicText field={caseStudy.data.company} />
 					</h3>
-					<div class="max-w-md">
+					<div class="text-content/80">
 						<PrismicRichText field={caseStudy.data.description} />
 					</div>
 
-					<PrismicLink
-						document={caseStudy}
-						class="z-10 after:absolute after:inset-0 hover:underline"
-					>
-						Read <PrismicText field={caseStudy.data.company} /> case study
-					</PrismicLink>
+					<Link field={caseStudy} linkType="withArrow">Read case study</Link>
 				</div>
 
 				<div class={clsx('relative lg:col-span-2', index % 2 && 'md:-order-1')}>
-					<div class="image-glow -bottom-8 -left-4 bg-orange-500"></div>
-					<div class="image-glow -right-4 -top-8 bg-violet-500"></div>
+					<div class="image-glow bg-accent-dark -bottom-8 -left-4"></div>
+					<div class="image-glow -right-4 -top-8 bg-brand-100"></div>
 					<PrismicImage
 						field={caseStudy.data.image}
 						sizes="(max-width: 768px) 100vw, 50vw"

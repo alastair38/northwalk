@@ -7,6 +7,7 @@ export async function load({ fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
 	const page = await client.getByUID('page', 'home');
+
 	const slices = await mapSliceZone(page.data.slices, mappers, { client });
 
 	return {
@@ -14,7 +15,7 @@ export async function load({ fetch, cookies }) {
 		title: asText(page.data.title),
 		meta_description: page.data.meta_description,
 		meta_title: page.data.meta_title,
-		meta_image: page.data.meta_image.url
+		meta_image: page.data.meta_image
 	};
 }
 

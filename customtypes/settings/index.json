@@ -5,29 +5,7 @@
 	"repeatable": false,
 	"status": true,
 	"json": {
-		"Main": {
-			"site_title": {
-				"type": "Text",
-				"config": {
-					"label": "Site title",
-					"placeholder": ""
-				}
-			},
-			"meta_description": {
-				"type": "Text",
-				"config": {
-					"label": "Meta description",
-					"placeholder": ""
-				}
-			},
-			"og_image": {
-				"type": "Image",
-				"config": {
-					"label": "OG Image",
-					"constraint": {},
-					"thumbnails": []
-				}
-			},
+		"Main Navigation": {
 			"navigation": {
 				"type": "Group",
 				"config": {
@@ -59,6 +37,74 @@
 							}
 						}
 					}
+				}
+			}
+		},
+		"Footer Navigation": {
+			"footer_navigation": {
+				"type": "Group",
+				"config": {
+					"label": "Footer Navigation",
+					"repeat": true,
+					"fields": {
+						"link": {
+							"type": "Link",
+							"config": {
+								"label": "Link",
+								"placeholder": "",
+								"select": null
+							}
+						},
+						"label": {
+							"type": "Text",
+							"config": {
+								"label": "Label",
+								"placeholder": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"SEO": {
+			"site_title": {
+				"type": "Text",
+				"config": {
+					"label": "Site title",
+					"placeholder": ""
+				}
+			},
+			"meta_description": {
+				"type": "Text",
+				"config": {
+					"label": "Site description",
+					"placeholder": ""
+				}
+			},
+			"og_image": {
+				"type": "Image",
+				"config": {
+					"label": "Open Graph Image",
+					"constraint": {},
+					"thumbnails": []
+				}
+			}
+		},
+		"Appearance": {
+			"theme": {
+				"type": "Select",
+				"config": {
+					"label": "Theme",
+					"placeholder": "",
+					"options": ["default", "fire", "ice", "autumn"],
+					"default_value": "default"
+				}
+			},
+			"latest_articles": {
+				"type": "Number",
+				"config": {
+					"label": "Latest Articles",
+					"placeholder": "Max content items to show in the 'Latest articles' block"
 				}
 			}
 		}

@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Do it now 'cause' it ain't that long till' it's gone.\nAin't no time like the present to avoid a turn that's wrong.\nRemember: it ain't a sprint, it's a marathon.\nOur ancestor's shoulders we stand upon."
+			},
+			"citation": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Timothy J Parker, Quannum Projects"
+			}
+		},
+		"items": []
+	}
+]

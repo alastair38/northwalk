@@ -16,7 +16,12 @@ export const repositoryName = import.meta.env.VITE_PRISMIC_ENVIRONMENT || sm.rep
 const routes: prismic.ClientConfig['routes'] = [
 	{ type: 'page', path: '/', uid: 'home' },
 	{ type: 'page', path: '/:uid' },
-	{ type: 'case_study', path: '/case-study/:uid' }
+	{ type: 'case_study', path: '/case-study/:uid' },
+	{ type: 'people', path: '/people/:uid' },
+	{ type: 'publications', path: '/publications/:uid' },
+	{ type: 'categories', path: '/publications/categories/:uid' },
+	{ type: 'team', path: '/people' },
+	{ type: 'post', path: '/articles/:uid' }
 ];
 
 /**
@@ -28,6 +33,13 @@ const routes: prismic.ClientConfig['routes'] = [
 export const createClient = ({ cookies, ...config }: CreateClientConfig = {}) => {
 	const client = prismic.createClient(repositoryName, {
 		routes,
+		defaultParams: {
+			fetchLinks: [
+				'categories.image', // The name of the type and the name of the field
+				'categories.title', // Add as many fields as you need
+				'categories.description'
+			]
+		},
 		...config
 	});
 

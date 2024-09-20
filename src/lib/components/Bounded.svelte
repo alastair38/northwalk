@@ -1,19 +1,25 @@
-<script>
+<script lang="ts">
 	import clsx from 'clsx';
 
-	export let tag = 'section';
+	type Variant = 'default' | 'wide';
+	let className: string | undefined = undefined;
 
-	/** @type {string | undefined} */
-	let className = undefined;
+	export let tag = 'section';
 	export { className as class };
+	export let variant = 'default';
 </script>
 
 <svelte:element
 	this={tag}
 	{...$$restProps}
-	class={clsx('px-4 py-14 first:pt-10 md:px-6 md:py-20 lg:py-24', className)}
+	class={clsx('px-4 py-14 first:pt-10 md:px-8 md:py-20 lg:py-24', className)}
 >
-	<div class="mx-auto flex w-full max-w-6xl flex-col items-center">
+	<div
+		class={clsx(
+			'mx-auto flex w-full flex-col items-center',
+			variant === 'default' ? 'max-w-5xl' : 'max-w-7xl'
+		)}
+	>
 		<slot />
 	</div>
 </svelte:element>

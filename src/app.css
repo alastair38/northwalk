@@ -2,14 +2,247 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	font-family: 'DM Sans Variable', sans-serif;
-	background-image: url('/assets/noise-texture.svg');
-	@apply grid bg-gray-950 bg-repeat text-gray-50;
+/* 
+		css color variables naming convention
+		
+		--color-base-light: 229 84% 5%;
+		--color-base: 217 33% 17%;
+		--color-base-dark: 215 19% 35%;
+		--color-content-light: 210 40% 98.04%;
+		--color-content: 214.29 31.82% 91.37%;
+		--color-content-dark: 215 20.22% 65.1%;
+		--color-brand-light: 171 77% 64%;
+		--color-brand: 172 66% 50%;
+		--color-brand-dark: 173 80% 40%;
+		--color-accent-light: 27 96% 61%;
+		--color-accent: 25 95% 53%;
+		--color-accent-dark: 21 90% 48%;
+		
+		*/
+
+@layer base {
+	:root {
+		--color-base-light: 229 84% 5%;
+		--color-base: 229 84% 5%;
+		--color-base-dark: 215 19% 35%;
+		--color-content-light: 210 40% 98.04%;
+		--color-content: 210 40% 98.04%;
+		--color-content-dark: 215 20.22% 65.1%;
+		--color-brand-light: 171 77% 64%;
+		--color-brand: 172 66% 50%;
+		--color-brand-dark: 173 80% 40%;
+		--color-accent-light: 27 96% 61%;
+		--color-accent: 25 95% 53%;
+		--color-accent-dark: 21 90% 48%;
+	}
+
+	:root :has(main[data-theme='fire']) {
+		--color-base-light: 229 84% 5%;
+		--color-base: 217 33% 17%;
+		--color-base-dark: 215 19% 35%;
+		--color-content-light: 210 40% 98.04%;
+		--color-content: 214.29 31.82% 91.37%;
+		--color-content-dark: 215 20.22% 65.1%;
+		--color-brand-light: 17 77% 64%;
+		--color-brand: 17 66% 50%;
+		--color-brand-dark: 17 80% 40%;
+		--color-accent-light: 127 96% 61%;
+		--color-accent: 125 95% 53%;
+		--color-accent-dark: 121 90% 48%;
+	}
+
+	:root :has(main[data-theme='ice']) {
+		--color-content-light: 253 29% 24%;
+		--color-content: 253 29% 14%;
+		--color-content-dark: 253 29% 4%;
+		--color-base-light: 210 40% 98.04%;
+		--color-base: 210 0% 96%;
+		--color-base-dark: 215 20.22% 65.1%;
+		--color-accent-light: 187 50% 65%;
+		--color-accent: 187 50% 55%;
+		--color-accent-dark: 187 50% 25%;
+		--color-brand-light: 286 50% 37%;
+		--color-brand: 286 50% 27%;
+		--color-brand-dark: 286 50% 17%;
+	}
+
+	:root :has(main[data-theme='autumn']) {
+		--color-content-light: 210 40% 98.04%;
+		--color-content: 214.29 31.82% 91.37%;
+		--color-content-dark: 215 20.22% 65.1%;
+		--color-base-light: 20 14% 4%;
+		--color-base: 12 6% 15%;
+		--color-base-dark: 33 5% 32%;
+		--color-brand-light: 48 96% 53%;
+		--color-brand: 45 93% 47%;
+		--color-brand-dark: 41 96% 40%;
+		--color-accent-light: 172 66% 50%;
+		--color-accent: 173 80% 40%;
+		--color-accent-dark: 175 84% 32%;
+	}
+
+	html {
+		@apply scroll-smooth;
+	}
+
+	p {
+		@apply hyphens-auto break-words;
+	}
 }
 
-[aria-current='page'] {
-	@apply underline decoration-orange-300 underline-offset-2;
+@keyframes spin {
+	from {
+		transform: scale(0.8);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+/* img {
+	animation: fade-in ease-in forwards;
+	scale: 1;
+	opacity: 0.3;
+	animation-timeline: view();
+	animation-range-start: cover;
+	animation-range-end: 500px;
+	transform-origin: top;
+} */
+
+img {
+	view-transition-name: var(--company);
+}
+
+figure[data-provider='YouTube'] > iframe,
+figure[data-provider='Vimeo'] > iframe {
+	@apply h-full w-full rounded-md bg-base shadow-2xl;
+}
+
+figure[data-provider='Twitter'] {
+	@apply min-h-[629px];
+}
+
+figure > .twitter-tweet.twitter-tweet-rendered {
+	@apply mx-auto;
+}
+
+.carousel {
+	-ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+	display: none;
+}
+
+.absolute.mix-blend-screen:last-of-type {
+	animation: colorshift linear forwards;
+
+	animation-timeline: view();
+	animation-range-start: 100px;
+	animation-range-end: 600px;
+}
+
+/* section {
+	transform: translateY(-100px);
+	animation: drop-in ease-in forwards;
+
+	animation-timeline: view();
+	animation-range-start: cover;
+	animation-range-end: cover;
+} */
+
+h2 > em {
+	scale: 1;
+	transform: translateY(-100px);
+	opacity: 0.5;
+	animation: fade-in linear forwards;
+	animation-timeline: view();
+	animation-range-start: contain;
+	animation-range-end: -200px;
+}
+
+[data-visible='true'] {
+	animation: 250ms fade-in 150ms linear forwards;
+}
+
+@keyframes fade-in {
+	to {
+		/* scale: 1; */
+		opacity: 1;
+	}
+}
+
+@keyframes drop-in {
+	to {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes colorshift {
+	to {
+		@apply bg-accent-dark;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	@supports (animation-timeline: scroll()) {
+	}
+}
+
+.vertical {
+	-webkit-writing-mode: vertical-lr;
+	-ms-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+}
+
+body {
+	background-image: url('/assets/noise-texture.svg');
+	@apply grid bg-base bg-repeat text-content;
+}
+
+body:has(dialog[open]) {
+	@apply overflow-y-hidden;
+}
+
+[aria-current='page']:not(.rounded-full) {
+	@apply underline decoration-brand-light underline-offset-2 hover:decoration-brand-dark;
+}
+
+.media-scroller::-webkit-scrollbar {
+	height: 0.4rem;
+}
+
+.media-scroller::-webkit-scrollbar-thumb {
+	@apply bg-accent-light/60;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+/* .media-scroller::-webkit-scrollbar-track-piece:end {
+	margin-right: 1rem;
+}
+
+.media-scroller::-webkit-scrollbar-track-piece:start {
+	margin-left: 1rem;
+} */
+
+.columns-3xs img {
+	transition: 400ms;
+}
+
+.columns-3xs:hover > figure img {
+	filter: brightness(0.5) grayscale(1);
+	transition: 400ms;
+}
+
+.columns-3xs > figure img:hover {
+	filter: brightness(1) grayscale(0);
+	scale: 110%;
+	transition: 400ms;
+}
+
+#mask-header img {
+	mask-image: linear-gradient(to top, transparent 15%, rgb(42, 5, 5) 75%);
 }
 
 .glass-container {
@@ -17,7 +250,7 @@ body {
 }
 
 .glass-container::before {
-	@apply absolute -inset-[10px] -z-10 rounded-xl border border-gray-100/20 bg-gray-200/10 backdrop-blur-md;
+	@apply absolute -inset-[5px] -z-10 rounded-xl border border-base-dark/20 bg-base/70 backdrop-blur-md;
 	content: '';
 }
 
@@ -38,4 +271,48 @@ body {
 	.signal-line {
 		--rotation: 0deg;
 	}
+}
+
+article {
+	counter-reset: footnotes;
+}
+
+/**
+ * Inline footnotes references
+ * 1. Increment the counter at each new reference
+ * 2. Reset link styles to make it appear like regular text
+ */
+.footnotes {
+	counter-increment: footnotes; /* 1 */
+	text-decoration: none; /* 2 */
+	color: inherit; /* 2 */
+	cursor: default; /* 2 */
+	outline: none; /* 2 */
+}
+
+/**
+ * Actual numbered references
+ * 1. Display the current state of the counter (e.g. `[1]`)
+ * 2. Align text as superscript
+ * 3. Make the number smaller (since it's superscript)
+ * 4. Slightly offset the number from the text
+ * 5. Reset link styles on the number to show it's usable
+ */
+.footnotes::after {
+	content: '[' counter(footnotes) ']'; /* 1 */
+	vertical-align: super; /* 2 */
+	font-size: 0.75em; /* 3 */
+	margin-left: 2px; /* 4 */
+
+	text-decoration: underline; /* 5 */
+	cursor: pointer; /* 5 */
+	@apply text-accent-light;
+}
+
+/**
+ * Resetting the default focused styles on the number
+ */
+.footnotes:focus::after {
+	outline: thin dotted;
+	outline-offset: 2px;
 }

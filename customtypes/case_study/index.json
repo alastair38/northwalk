@@ -38,11 +38,39 @@
 					"thumbnails": []
 				}
 			},
+			"author": {
+				"type": "Link",
+				"config": {
+					"label": "Author",
+					"select": "document",
+					"customtypes": ["people"]
+				}
+			},
+			"authors": {
+				"type": "Group",
+				"config": {
+					"label": "Authors",
+					"repeat": true,
+					"fields": {
+						"author": {
+							"type": "Link",
+							"config": {
+								"label": "author",
+								"select": "document",
+								"customtypes": ["people"]
+							}
+						}
+					}
+				}
+			},
 			"slices": {
 				"type": "Slices",
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"media_embed": {
+							"type": "SharedSlice"
+						},
 						"rich_text": {
 							"type": "SharedSlice"
 						}

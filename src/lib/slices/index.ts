@@ -2,18 +2,44 @@
 
 import Bento from './Bento/index.svelte';
 import CallToAction from './CallToAction/index.svelte';
+import Carousel from './Carousel/index.svelte';
 import CaseStudies from './CaseStudies/index.svelte';
+import DetailsCard from './DetailsCard/index.svelte';
+import DiscoverCategories from './DiscoverCategories/index.svelte';
+import Faqs from './Faqs/index.svelte';
+import Footnotes from './Footnotes/index.svelte';
+import Form from './Form/index.svelte';
+import FullWidthImage from './FullWidthImage/index.svelte';
 import Hero from './Hero/index.svelte';
-import Integrations from './Integrations/index.svelte';
+import HorizontalGallery from './HorizontalGallery/index.svelte';
+import LatestArticles from './LatestArticles/index.svelte';
+import MasonryGallery from './MasonryGallery/index.svelte';
+import MediaEmbed from './MediaEmbed/index.svelte';
 import RichText from './RichText/index.svelte';
 import Showcase from './Showcase/index.svelte';
+import Staff from './Staff/index.svelte';
+import Tabs from './Tabs/index.svelte';
+import Testimonials from './Testimonials/index.svelte';
 
 export const components = {
 	bento: Bento,
 	call_to_action: CallToAction,
+	carousel: Carousel,
 	case_studies: CaseStudies,
+	details_card: DetailsCard,
+	discover_categories: DiscoverCategories,
+	faqs: Faqs,
+	footnotes: Footnotes,
+	form: Form,
+	full_width_image: FullWidthImage,
 	hero: Hero,
-	integrations: Integrations,
+	horizontal_gallery: HorizontalGallery,
+	latest_articles: LatestArticles,
+	masonry_gallery: MasonryGallery,
+	media_embed: MediaEmbed,
 	rich_text: RichText,
-	showcase: Showcase
+	showcase: Showcase,
+	staff: Staff,
+	tabs: Tabs,
+	testimonials: Testimonials
 };

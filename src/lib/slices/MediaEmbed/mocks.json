@@ -1,0 +1,115 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "search",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Amet ex fugiat in irure officia reprehenderit elit ullamco mollit in voluptate minim deserunt incididunt ex."
+						}
+					}
+				]
+			},
+			"link": {
+				"embed_url": "https://www.youtube.com/watch?v=lx0Ns1DR8eg",
+				"type": "video",
+				"version": "1.0",
+				"title": "Psycho Killer (Acoustic Version) (feat. Arthur Russell) (2024 Remaster)",
+				"author_name": "Talking Heads - Topic",
+				"author_url": "https://www.youtube.com/channel/UCCmr_pJ7az1JfWUiujsiHWg",
+				"provider_name": "YouTube",
+				"provider_url": "https://www.youtube.com/",
+				"thumbnail_url": "https://i.ytimg.com/vi/lx0Ns1DR8eg/hqdefault.jpg",
+				"thumbnail_width": 480,
+				"thumbnail_height": 360,
+				"html": "<iframe width=\"200\" height=\"150\" src=\"https://www.youtube.com/embed/lx0Ns1DR8eg?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"Psycho Killer (Acoustic Version) (feat. Arthur Russell) (2024 Remaster)\"></iframe>",
+				"__TYPE__": "EmbedContent",
+				"all": {
+					"embed_url": "https://www.youtube.com/watch?v=lx0Ns1DR8eg",
+					"type": "video",
+					"version": "1.0",
+					"title": "Psycho Killer (Acoustic Version) (feat. Arthur Russell) (2024 Remaster)",
+					"author_name": "Talking Heads - Topic",
+					"author_url": "https://www.youtube.com/channel/UCCmr_pJ7az1JfWUiujsiHWg",
+					"provider_name": "YouTube",
+					"provider_url": "https://www.youtube.com/",
+					"thumbnail_url": "https://i.ytimg.com/vi/lx0Ns1DR8eg/hqdefault.jpg",
+					"thumbnail_width": 480,
+					"thumbnail_height": 360,
+					"html": "<iframe width=\"200\" height=\"150\" src=\"https://www.youtube.com/embed/lx0Ns1DR8eg?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"Psycho Killer (Acoustic Version) (feat. Arthur Russell) (2024 Remaster)\"></iframe>",
+					"height": 150,
+					"width": 200
+				}
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "privacyEnhanced",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "his",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Amet proident ut dolore veniam reprehenderit."
+						}
+					}
+				]
+			},
+			"link": {
+				"embed_url": "https://youtu.be/prqvMxJev4k?si=l9MDLSqqrtg11qU0",
+				"__TYPE__": "EmbedContent",
+				"type": "video",
+				"version": "1.0",
+				"title": "Richard Swift - Broken finger blues",
+				"author_name": "L'enfant Terrible",
+				"author_url": "https://www.youtube.com/@JeSuisLenfantTerrible",
+				"provider_name": "YouTube",
+				"provider_url": "https://www.youtube.com/",
+				"thumbnail_url": "https://i.ytimg.com/vi/prqvMxJev4k/hqdefault.jpg",
+				"thumbnail_width": 480,
+				"thumbnail_height": 360,
+				"html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/prqvMxJev4k?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"Richard Swift - Broken finger blues\"></iframe>",
+				"all": {
+					"embed_url": "https://youtu.be/prqvMxJev4k?si=l9MDLSqqrtg11qU0",
+					"type": "video",
+					"version": "1.0",
+					"title": "Richard Swift - Broken finger blues",
+					"author_name": "L'enfant Terrible",
+					"author_url": "https://www.youtube.com/@JeSuisLenfantTerrible",
+					"provider_name": "YouTube",
+					"provider_url": "https://www.youtube.com/",
+					"thumbnail_url": "https://i.ytimg.com/vi/prqvMxJev4k/hqdefault.jpg",
+					"thumbnail_width": 480,
+					"thumbnail_height": 360,
+					"html": "<iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/prqvMxJev4k?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen title=\"Richard Swift - Broken finger blues\"></iframe>",
+					"height": 113,
+					"width": 200
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

@@ -170,5 +170,325 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contrast",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Tears like these",
+							"spans": [
+								{
+									"type": "em",
+									"start": 6,
+									"end": 10
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id pariatur voluptate deserunt ea.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Item 1",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In incididunt ullamco dolore dolor sint tempor id esse sint eiusmod mollit ullamco."
+											}
+										}
+									]
+								}
+							],
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1496849858694-9c2a93479df2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNHx8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+									"alt": "timelapse photography of passenger train",
+									"origin": {
+										"id": "pyAsqdUN8TQ",
+										"url": "https://images.unsplash.com/photo-1496849858694-9c2a93479df2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNHx8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+										"width": 5472,
+										"height": 3648
+									},
+									"width": 5472,
+									"height": 3648,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							],
+							[
+								"wide",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": true
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Item 2",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In incididunt ullamco dolore dolor sint tempor id esse sint eiusmod mollit ullamco.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+									"alt": "people gathered on street",
+									"origin": {
+										"id": "Mn9Fa_wQH-M",
+										"url": "https://images.unsplash.com/photo-1494587416117-f102a2ac0a8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNnx8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+										"width": 6720,
+										"height": 4480
+									},
+									"width": 6720,
+									"height": 4480,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"wide",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Item 3",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In incididunt ullamco dolore dolor sint tempor id esse sint eiusmod mollit ullamco.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1551006855-766a3733333d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+									"alt": "a very tall building with a very tall spire",
+									"origin": {
+										"id": "ypPVnKK72NQ",
+										"url": "https://images.unsplash.com/photo-1551006855-766a3733333d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+										"width": 4812,
+										"height": 4000
+									},
+									"width": 4812,
+									"height": 4000,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"wide",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": true
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading3",
+											"content": {
+												"text": "Item 4",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1494607239400-ff147da48308?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxM3x8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+									"alt": "man leaning on white wall of the parking area",
+									"origin": {
+										"id": "fiu89zdeTQI",
+										"url": "https://images.unsplash.com/photo-1494607239400-ff147da48308?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxM3x8dXJiYW58ZW58MHx8fHwxNzI0ODU1NzgzfDA&ixlib=rb-4.0.3&q=85",
+										"width": 4188,
+										"height": 2829
+									},
+									"width": 4188,
+									"height": 2829,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In incididunt ullamco dolore dolor sint tempor id esse sint eiusmod mollit ullamco.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

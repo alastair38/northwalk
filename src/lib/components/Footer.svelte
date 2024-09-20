@@ -7,9 +7,9 @@
 	export let settings;
 </script>
 
-<footer>
+<footer class="mt-auto">
 	<nav
-		class="flex flex-col items-center justify-between gap-6 border-t border-gray-600 px-8 py-7 md:flex-row"
+		class="border-brand-light/10 flex flex-col items-center justify-between gap-6 border-t px-8 py-7 md:flex-row"
 		aria-label="Footer"
 	>
 		<a href="/">

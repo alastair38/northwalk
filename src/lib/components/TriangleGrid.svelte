@@ -1,5 +1,7 @@
 <script>
 	const grid = [14, 30];
+
+	export let opacity = 1;
 </script>
 
 <svg
@@ -8,7 +10,7 @@
 	viewBox="0 0 935 425"
 	class="absolute -left-2 -top-14 -z-10"
 	id="triangle-grid"
-	opacity={1}
+	{opacity}
 	style="mask-image: linear-gradient(black, transparent);"
 >
 	<g class="triangle-grid-group">

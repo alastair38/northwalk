@@ -27,10 +27,46 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
-						"call_to_action": {
+						"carousel": {
 							"type": "SharedSlice"
 						},
-						"integrations": {
+						"media_embed": {
+							"type": "SharedSlice"
+						},
+						"faqs": {
+							"type": "SharedSlice"
+						},
+						"details_card": {
+							"type": "SharedSlice"
+						},
+						"form": {
+							"type": "SharedSlice"
+						},
+						"masonry_gallery": {
+							"type": "SharedSlice"
+						},
+						"horizontal_gallery": {
+							"type": "SharedSlice"
+						},
+						"tabs": {
+							"type": "SharedSlice"
+						},
+						"discover_categories": {
+							"type": "SharedSlice"
+						},
+						"footnotes": {
+							"type": "SharedSlice"
+						},
+						"testimonials": {
+							"type": "SharedSlice"
+						},
+						"staff": {
+							"type": "SharedSlice"
+						},
+						"latest_articles": {
+							"type": "SharedSlice"
+						},
+						"call_to_action": {
 							"type": "SharedSlice"
 						},
 						"case_studies": {

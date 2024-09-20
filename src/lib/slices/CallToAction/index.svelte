@@ -15,11 +15,9 @@
 	class="relative py-32 text-center font-medium md:py-40"
 >
 	<div
-		class="glow absolute -z-10 aspect-square w-full max-w-sm rounded-full bg-violet-500/50 blur-[160px] filter"
+		class="glow bg-brand/50 absolute -z-10 aspect-square w-full max-w-sm rounded-full blur-[160px] filter"
 	/>
-	<div
-		class="glass-container rounded-lg bg-gradient-to-b from-gray-800 to-gray-900 p-4 md:rounded-xl"
-	>
+	<div class="glass-container from-base to-base-dark rounded-lg bg-gradient-to-b p-4 md:rounded-xl">
 		<PlainLogo />
 	</div>
 
