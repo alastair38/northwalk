@@ -29,15 +29,15 @@ export async function load({ params, fetch, cookies }) {
 	}
 }
 
-export async function entries([]) {
-	const client = createClient();
-	const pages = await client.getByType('case_study', {
-		orderings: {
-			field: 'document.first_publication_date',
-			direction: 'desc'
-		},
-		pageSize: 9
-	});
+// export async function entries([]) {
+// 	const client = createClient();
+// 	const pages = await client.getByType('case_study', {
+// 		orderings: {
+// 			field: 'document.first_publication_date',
+// 			direction: 'desc'
+// 		},
+// 		pageSize: 9
+// 	});
 
-	return Array.from({ length: pages.total_pages }, (_, i) => i + 1);
-}
+// 	return Array.from({ length: pages.total_pages }, (_, i) => i + 1);
+// }
