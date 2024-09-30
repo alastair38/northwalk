@@ -1,11 +1,5 @@
 <script lang="ts">
-	import {
-		PrismicImage,
-		PrismicRichText,
-		PrismicText,
-		PrismicLink,
-		SliceZone
-	} from '@prismicio/svelte';
+	import { PrismicText, SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
 	import Bounded from '$lib/components/Bounded.svelte';

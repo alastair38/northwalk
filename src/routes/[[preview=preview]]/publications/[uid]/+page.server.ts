@@ -1,15 +1,6 @@
 import { createClient } from '$lib/prismicio';
-import { asText } from '@prismicio/client';
-
-import * as prismic from '@prismicio/client';
 import { error } from '@sveltejs/kit';
-// import type {
-// 	AllDocumentTypes,
-// 	CaseStudyDocumentDataAuthorsItem,
-// 	CategoriesDocument,
-// 	PeopleDocument,
-// 	PeopleDocumentDataPlatformItem
-// } from '../../../../prismicio-types.js';
+
 export async function load({ params, fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
