@@ -14,7 +14,7 @@
 	};
 </script>
 
-<article class="bg-base">
+<article>
 	<div class="prose prose-lg mx-auto w-full hover:prose-a:no-underline">
 		{@html prismicH.asHTML(slice.primary.content, null, htmlSerializer)}
 	</div>

@@ -29,14 +29,14 @@
 		document={$$restProps.document}
 		{...$$restProps}
 		class={clsx(
-			'group flex w-fit items-center gap-1 font-medium focus-visible:outline-offset-4',
+			'group flex w-fit items-center gap-2 font-medium focus-visible:outline-offset-4',
 			className
 		)}
 	>
 		<slot />
 		<IconArrowRight
 			aria-hidden="true"
-			class="bgcontent aspect-square rounded-full p-0.5 text-accent transition-transform duration-200 group-hover:translate-x-1"
+			class="text-accent transition-transform duration-200 group-hover:translate-x-1"
 		/>
 	</PrismicLink>
 {/if}

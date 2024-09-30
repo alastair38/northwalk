@@ -3,12 +3,13 @@
 	import Link from '$lib/components/Link.svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
 	import type { PageData } from '../../$types';
+	import PageHeader from '$lib/components/ArchiveHeader.svelte';
 
 	export let data;
 </script>
 
 <Bounded>
-	<header class="prose space-y-6 text-center">
+	<PageHeader>
 		<h1 class="text-3xl font-black">{data.page.data.title}</h1>
 		<PrismicRichText field={data.page.data.description} />
 		<p class="text-pretty">
@@ -17,7 +18,7 @@
 			repellendus totam earum deleniti. Consequatur, itaque quod!
 		</p>
 		<hr class="border-content/10" />
-	</header>
+	</PageHeader>
 	<div class="grid grid-cols-3 gap-6 py-12">
 		{#each data.publications.results as item}
 			<div class="w-full space-y-6 rounded-md p-6 shadow-2xl">

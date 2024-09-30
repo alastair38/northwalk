@@ -13,7 +13,7 @@
 		'text-balance',
 		variant === 'default' && 'text-3xl md:text-5xl',
 		variant === 'small' && 'text-xl md:text-3xl',
-		variant === 'xsmall' && 'text-base md:text-xl',
+		variant === 'xsmall' && ' md:text-xl',
 		variant === 'impact' && 'text-5xl font-black md:text-7xl',
 		className
 	)}

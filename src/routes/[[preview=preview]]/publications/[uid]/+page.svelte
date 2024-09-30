@@ -31,7 +31,7 @@
 </script>
 
 <Bounded class="mt-12">
-	<header class="mx-auto max-w-3xl text-pretty">
+	<header class="mx-auto max-w-3xl">
 		<TriangleGrid opacity={0.5} />
 		<Heading1 variant="small">{data.page.data.title}</Heading1>
 
@@ -39,7 +39,7 @@
 			<Authors {authors} />
 		{/if}
 
-		<p class="text-content mb-6 text-lg">
+		<p class="mb-6 text-lg text-content">
 			<PrismicText field={data.page.data.body} />
 		</p>
 
@@ -48,7 +48,9 @@
 		{/if}
 	</header>
 
-	<FeaturedImage image={data.page.data.image} />
+	{#if data.page.data.image}
+		<FeaturedImage image={data.page.data.image} />
+	{/if}
 
 	<div class="mx-auto">
 		<SliceZone slices={data.page.data.slices} {components} />

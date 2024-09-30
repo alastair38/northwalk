@@ -13,12 +13,10 @@
       "imageUrl": "",
       "primary": {
         "heading": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Heading",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading2"
+            "placeholder": ""
           }
         },
         "button_link": {
@@ -34,6 +32,37 @@
           "config": {
             "label": "Button Label",
             "placeholder": ""
+          }
+        },
+        "width": {
+          "type": "Boolean",
+          "config": {
+            "label": "Wide",
+            "placeholder_false": "False",
+            "placeholder_true": "True",
+            "default_value": false
+          }
+        },
+        "spacing": {
+          "type": "Boolean",
+          "config": {
+            "label": "Large Spacing",
+            "placeholder_false": "False",
+            "placeholder_true": "True",
+            "default_value": false
+          }
+        },
+        "background": {
+          "type": "Select",
+          "config": {
+            "label": "Background",
+            "placeholder": "",
+            "options": [
+              "default",
+              "brand",
+              "accent"
+            ],
+            "default_value": "default"
           }
         }
       },

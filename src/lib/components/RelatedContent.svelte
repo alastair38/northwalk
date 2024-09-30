@@ -2,6 +2,7 @@
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import IconArrowRight from '~icons/ph/arrow-right';
 	import type { Content, Query } from '@prismicio/client';
+	import Link from './Link.svelte';
 
 	export let articles: (Content.AllDocumentTypes & {
 		data: Content.PostDocumentData | Content.PublicationsDocumentData;
@@ -18,10 +19,13 @@
 		{#each articles as item}
 			<div class="space-y-6">
 				{#if item.type === 'post'}
-					<PrismicImage field={item.data.image} class="h-60 w-full object-cover opacity-100" />
+					<PrismicImage
+						field={item.data.image}
+						class="h-60 w-full rounded-md object-cover opacity-100"
+					/>
 				{/if}
 
-				<h3 class="flex font-black">
+				<h3 class="flex text-xl font-black md:text-2xl">
 					{item.data.title}
 				</h3>
 
@@ -33,14 +37,11 @@
 					<PrismicRichText field={item.data.body} />
 				{/if}
 
-				<PrismicLink
-					document={item}
-					class="text-accent-light group flex w-fit items-center gap-2 font-black"
+				<Link linkType="withArrow" document={item}
 					>Read more <span class="sr-only">about {item.data.title}</span>
-					<IconArrowRight class="transition-transform duration-200 group-hover:translate-x-1" />
-				</PrismicLink>
+				</Link>
 			</div>
-			<hr />
+			<hr class="border-content/10" />
 		{/each}
 	</div>
 </div>

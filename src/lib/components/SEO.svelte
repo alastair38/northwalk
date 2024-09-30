@@ -1,30 +1,42 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
+
+	type MetaData = {
+		content_type: string;
+		title: string;
+		description: string;
+	};
+
+	let filteredMeta = $page.data.settings.data.custom_type_meta.filter((meta: MetaData) => {
+		return meta.content_type.replace(/ /g, '_').toLowerCase() === $page.data.meta_type;
+	});
+
+	const metaDescription = $page.data.meta_description
+		? $page.data.meta_description
+		: filteredMeta[0]?.description;
 </script>
 
 <svelte:head>
-	<title
-		>{$page.data.title}
-		{$page.url.pathname !== '/' ? ` - ${$page.data.settings.data.site_title}` : ''}</title
-	>
+	<title>
+		{$page.data?.title ? $page.data?.title : filteredMeta[0]?.title}
 
-	{#if $page.data.meta_description}
-		<meta name="description" content={$page.data.meta_description} />
-	{:else}
-		<meta name="description" content={$page.data.settings.data.meta_description} />
-	{/if}
+		{$page.url.pathname !== '/' ? ` - ${$page.data.settings.data.site_title}` : ''}
+	</title>
+
+	<meta
+		name="description"
+		content={metaDescription ? metaDescription : $page.data.settings.data.meta_description}
+	/>
 
 	<link rel="canonical" href={$page.url.href} />
 
-	{#if $page.data.meta_description}
-		<meta property="og:description" content={$page.data.meta_description} />
-	{:else}
-		<meta property="og:description" content={$page.data.settings.data.meta_description} />
-	{/if}
+	<meta
+		property="og:description"
+		content={metaDescription ? metaDescription : $page.data.settings.data.meta_description}
+	/>
 
-	{#if $page.data.meta_title}
-		<meta name="og:title" content={$page.data.meta_title} />
-	{/if}
+	<meta name="og:title" content={$page.data?.title ? $page.data?.title : filteredMeta[0]?.title} />
+
 	{#if $page.data.meta_image}
 		<meta name="og:image" content={$page.data.meta_image.url} />
 		<meta name="twitter:card" content="summary_large_image" />
@@ -35,10 +47,13 @@
 
 	<!-- Open Graph -->
 	<meta property="og:site_name" content={$page.data.settings.data.site_title} />
-	<meta property="og:title" content={$page.data.title} />
+	<meta
+		property="og:title"
+		content={$page.data?.title ? $page.data?.title : filteredMeta[0]?.title}
+	/>
 	<meta
 		property="og:description"
-		content={$page.data.meta_description || $page.data.settings.data.meta_description}
+		content={metaDescription ? metaDescription : $page.data.settings.data.meta_description}
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={$page.url.href} />
@@ -64,10 +79,10 @@
 	/>
 
 	<!-- Twitter -->
-	<meta name="twitter:title" content={$page.data.title} />
+	<meta name="twitter:title" content={$page.data?.title} />
 	<meta
 		name="twitter:description"
-		content={$page.data.meta_description || $page.data.settings.data.meta_description}
+		content={metaDescription ? metaDescription : $page.data.settings.data.meta_description}
 	/>
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta

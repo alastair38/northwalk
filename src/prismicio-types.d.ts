@@ -5,6 +5,60 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for Article Categories documents
+ */
+interface ArticleCategoriesDocumentData {
+	/**
+	 * Title field in *Article Categories*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: article_categories.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Description field in *Article Categories*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: article_categories.description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	description: prismic.RichTextField;
+
+	/**
+	 * Image field in *Article Categories*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: article_categories.image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Article Categories document from Prismic
+ *
+ * - **API ID**: `article_categories`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleCategoriesDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithUID<
+		Simplify<ArticleCategoriesDocumentData>,
+		'article_categories',
+		Lang
+	>;
+
+/**
  * Item in *Case Study → Authors*
  */
 export interface CaseStudyDocumentDataAuthorsItem {
@@ -139,11 +193,11 @@ export type CaseStudyDocument<Lang extends string = string> = prismic.PrismicDoc
 >;
 
 /**
- * Content for Categories documents
+ * Content for Publication Categories documents
  */
 interface CategoriesDocumentData {
 	/**
-	 * Title field in *Categories*
+	 * Title field in *Publication Categories*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -154,7 +208,7 @@ interface CategoriesDocumentData {
 	title: prismic.KeyTextField;
 
 	/**
-	 * Description field in *Categories*
+	 * Description field in *Publication Categories*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -165,7 +219,7 @@ interface CategoriesDocumentData {
 	description: prismic.RichTextField;
 
 	/**
-	 * Image field in *Categories*
+	 * Image field in *Publication Categories*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
@@ -177,7 +231,7 @@ interface CategoriesDocumentData {
 }
 
 /**
- * Categories document from Prismic
+ * Publication Categories document from Prismic
  *
  * - **API ID**: `categories`
  * - **Repeatable**: `true`
@@ -331,13 +385,13 @@ interface PageDocumentData {
 	/**
 	 * Title field in *Page*
 	 *
-	 * - **Field Type**: Title
+	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: page.title
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	title: prismic.TitleField;
+	title: prismic.RichTextField;
 
 	/**
 	 * Slice Zone field in *Page*
@@ -557,7 +611,7 @@ export interface PostDocumentDataCategoriesItem {
 	 * - **API ID Path**: post.categories[].category
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	category: prismic.ContentRelationshipField<'categories'>;
+	category: prismic.ContentRelationshipField<'article_categories'>;
 }
 
 type PostDocumentDataSlicesSlice =
@@ -984,6 +1038,41 @@ export interface SettingsDocumentDataFooterNavigationItem {
 }
 
 /**
+ * Item in *Settings → Metadata for archive pages*
+ */
+export interface SettingsDocumentDataCustomTypeMetaItem {
+	/**
+	 * Content type field in *Settings → Metadata for archive pages*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.custom_type_meta[].content_type
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	content_type: prismic.SelectField<'Post' | 'Case Study' | 'Publications'>;
+
+	/**
+	 * Title field in *Settings → Metadata for archive pages*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.custom_type_meta[].title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Description field in *Settings → Metadata for archive pages*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.custom_type_meta[].description
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	description: prismic.KeyTextField;
+}
+
+/**
  * Content for Settings documents
  */
 interface SettingsDocumentData {
@@ -1036,7 +1125,18 @@ interface SettingsDocumentData {
 	 * - **Tab**: SEO
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	og_image: prismic.ImageField<never> /**
+	og_image: prismic.ImageField<never>;
+
+	/**
+	 * Metadata for archive pages field in *Settings*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.custom_type_meta[]
+	 * - **Tab**: SEO
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	custom_type_meta: prismic.GroupField<Simplify<SettingsDocumentDataCustomTypeMetaItem>> /**
 	 * Theme field in *Settings*
 	 *
 	 * - **Field Type**: Select
@@ -1151,6 +1251,7 @@ export type TeamDocument<Lang extends string = string> = prismic.PrismicDocument
 >;
 
 export type AllDocumentTypes =
+	| ArticleCategoriesDocument
 	| CaseStudyDocument
 	| CategoriesDocument
 	| NavigationDocument
@@ -1371,12 +1472,12 @@ export interface CallToActionSliceDefaultPrimary {
 	/**
 	 * Heading field in *CallToAction → Default → Primary*
 	 *
-	 * - **Field Type**: Title
+	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: call_to_action.default.primary.heading
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	heading: prismic.TitleField;
+	heading: prismic.KeyTextField;
 
 	/**
 	 * Button Link field in *CallToAction → Default → Primary*
@@ -1397,6 +1498,39 @@ export interface CallToActionSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	button_label: prismic.KeyTextField;
+
+	/**
+	 * Wide field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: call_to_action.default.primary.width
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	width: prismic.BooleanField;
+
+	/**
+	 * Large Spacing field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: call_to_action.default.primary.spacing
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	spacing: prismic.BooleanField;
+
+	/**
+	 * Background field in *CallToAction → Default → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: default
+	 * - **API ID Path**: call_to_action.default.primary.background
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	background: prismic.SelectField<'default' | 'brand' | 'accent', 'filled'>;
 }
 
 /**
@@ -2522,7 +2656,7 @@ export interface MediaEmbedSliceDefaultPrimary {
 	 * Link field in *MediaEmbed → Default → Primary*
 	 *
 	 * - **Field Type**: Embed
-	 * - **Placeholder**: *None*
+	 * - **Placeholder**: Embeds for Twitter do not work
 	 * - **API ID Path**: media_embed.default.primary.link
 	 * - **Documentation**: https://prismic.io/docs/field#embed
 	 */
@@ -2874,26 +3008,6 @@ export interface StaffSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	staff_members: prismic.GroupField<Simplify<StaffSliceDefaultPrimaryStaffMembersItem>>;
-
-	/**
-	 * Testing field in *Staff → Default → Primary*
-	 *
-	 * - **Field Type**: Content Relationship
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: staff.default.primary.testing
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	testing: prismic.ContentRelationshipField<'people'>;
-
-	/**
-	 * TestImage field in *Staff → Default → Primary*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: staff.default.primary.testimage
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	testimage: prismic.ImageField<never>;
 }
 
 /**
@@ -3082,6 +3196,8 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			ArticleCategoriesDocument,
+			ArticleCategoriesDocumentData,
 			CaseStudyDocument,
 			CaseStudyDocumentData,
 			CaseStudyDocumentDataAuthorsItem,
@@ -3116,6 +3232,7 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataNavigationItem,
 			SettingsDocumentDataFooterNavigationItem,
+			SettingsDocumentDataCustomTypeMetaItem,
 			TeamDocument,
 			TeamDocumentData,
 			TeamDocumentDataSlicesSlice,

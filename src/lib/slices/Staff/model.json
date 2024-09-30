@@ -35,24 +35,6 @@
               }
             }
           }
-        },
-        "testing": {
-          "type": "Link",
-          "config": {
-            "label": "Testing",
-            "select": "document",
-            "customtypes": [
-              "people"
-            ]
-          }
-        },
-        "testimage": {
-          "type": "Image",
-          "config": {
-            "label": "TestImage",
-            "constraint": {},
-            "thumbnails": []
-          }
         }
       },
       "items": {}

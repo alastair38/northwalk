@@ -18,8 +18,8 @@
 				"config": {
 					"label": "Title",
 					"placeholder": "",
-					"allowTargetBlank": true,
-					"single": "heading1"
+					"allowTargetBlank": false,
+					"single": "strong,em"
 				}
 			},
 			"slices": {

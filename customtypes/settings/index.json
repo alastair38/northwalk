@@ -88,6 +88,37 @@
 					"constraint": {},
 					"thumbnails": []
 				}
+			},
+			"custom_type_meta": {
+				"type": "Group",
+				"config": {
+					"label": "Metadata for archive pages",
+					"repeat": true,
+					"fields": {
+						"content_type": {
+							"type": "Select",
+							"config": {
+								"label": "Content type",
+								"placeholder": "",
+								"options": ["Post", "Case Study", "Publications"]
+							}
+						},
+						"title": {
+							"type": "Text",
+							"config": {
+								"label": "Title",
+								"placeholder": ""
+							}
+						},
+						"description": {
+							"type": "Text",
+							"config": {
+								"label": "Description",
+								"placeholder": ""
+							}
+						}
+					}
+				}
 			}
 		},
 		"Appearance": {

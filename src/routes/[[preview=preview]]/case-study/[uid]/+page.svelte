@@ -13,10 +13,15 @@
 	import TriangleGrid from '$lib/components/TriangleGrid.svelte';
 
 	import type { PeopleDocument } from '../../../../prismicio-types.js';
+	import Authors from '$lib/components/Authors.svelte';
+	import Excerpt from '$lib/components/Excerpt.svelte';
+	import ArticleHeader from '$lib/components/ArticleHeader.svelte';
+	import FeaturedImage from '$lib/components/FeaturedImage.svelte';
+	import Heading1 from '$lib/components/Heading1.svelte';
 
 	export let data;
 
-	const allAuthors = data.page.data.authors.map(
+	const authors = data.page.data.authors.map(
 		(author) =>
 			author.author as typeof author.author & {
 				uid: PeopleDocument['uid'];
@@ -26,36 +31,20 @@
 </script>
 
 <Bounded>
-	<div class="relative grid w-full place-items-center gap-6 text-center">
+	<ArticleHeader>
 		<TriangleGrid />
-		<h1 class="text-5xl font-medium md:text-7xl">
+		<Heading1>
 			<PrismicText field={data.page.data.company} />
-			<span class="text-accent-light block text-lg">Case Study</span>
-		</h1>
+			<span class="mt-2 block text-lg font-normal text-accent-light">Case Study</span>
+		</Heading1>
+		{#if authors.length > 0}
+			<Authors class="justify-center" {authors} />
+		{/if}
 
-		{#if allAuthors.length !== 0}
-			<div class="items center flex gap-6">
-				{#each allAuthors as item}
-					<a
-						class="group flex items-center gap-2 decoration-emerald-300 underline-offset-2 hover:underline focus-visible:underline"
-						href={`/people/${item.uid}`}
-					>
-						<PrismicImage
-							field={item.data.image}
-							class="h-8 w-8 rounded-full object-cover opacity-100 transition-transform duration-200 group-hover:scale-105 group-focus-visible:scale-105"
-						/>{item.data.name}
-					</a>
-				{/each}
-			</div>{/if}
-		<p class="text-content mb-6 max-w-xl text-lg">
-			<PrismicText field={data.page.data.description} />
-		</p>
-		<div style:--company="image-{data.page.uid}">
-			<PrismicImage field={data.page.data.image} class="case-study__image rounded-lg opacity-100" />
-		</div>
-	</div>
-
-	<div class="mx-auto mt-12 md:mt-16">
-		<SliceZone slices={data.page.data.slices} {components} />
-	</div>
+		{#if data.page.data.description}
+			<Excerpt class="mx-auto max-w-prose" excerpt={data.page.data.description} />
+		{/if}
+	</ArticleHeader>
+	<FeaturedImage image={data.page.data.image} />
+	<SliceZone slices={data.page.data.slices} {components} />
 </Bounded>

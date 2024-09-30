@@ -115,7 +115,7 @@ img {
 
 figure[data-provider='YouTube'] > iframe,
 figure[data-provider='Vimeo'] > iframe {
-	@apply h-full w-full rounded-md bg-base shadow-2xl;
+	@apply aspect-video h-full w-full;
 }
 
 figure[data-provider='Twitter'] {

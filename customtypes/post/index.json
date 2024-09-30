@@ -64,7 +64,7 @@
 							"config": {
 								"label": "Category",
 								"select": "document",
-								"customtypes": ["categories"]
+								"customtypes": ["article_categories"]
 							}
 						}
 					}

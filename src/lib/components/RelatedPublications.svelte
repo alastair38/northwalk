@@ -24,9 +24,7 @@
 					{item.data.title}
 				</h3>
 				<PrismicRichText field={item.data.body} />
-				<PrismicLink
-					document={item}
-					class="text-accent group flex w-fit items-center gap-2 font-black"
+				<PrismicLink document={item} class=" group flex w-fit items-center gap-2 font-medium"
 					>Read more <span class="sr-only">about {item.data.title}</span>
 					<IconArrowRight
 						class="transition-transform duration-200 group-hover:translate-x-2"

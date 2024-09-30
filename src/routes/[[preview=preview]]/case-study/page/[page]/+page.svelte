@@ -4,43 +4,44 @@
 	import type { PageData } from './$types';
 	import { PrismicImage, PrismicLink, PrismicText } from '@prismicio/svelte';
 
+	import CaseStudyCard from '$lib/components/CaseStudyCard.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
+	import { filteredMeta } from '$lib/utils';
+	import { page } from '$app/stores';
+	import ArchiveHeader from '$lib/components/ArchiveHeader.svelte';
+	import Divider from '$lib/components/Divider.svelte';
+	import Grid from '$lib/components/Grid.svelte';
+	import Heading1 from '$lib/components/Heading1.svelte';
+	import Archive from '$lib/components/pages/Archive.svelte';
+
 	export let data: PageData;
+
+	console.log(data);
+
+	// const meta = filteredMeta(
+	// 	$page.data.settings.data?.custom_type_meta,
+	// 	data.documents.results[0].type
+	// );
 </script>
 
-<Bounded>
-	<h1 class="mb-12 text-4xl font-black">Case Studies</h1>
-	<div class="grid grid-cols-3 gap-8">
-		{#each data.studies.results as item}
-			<div class="group overflow-clip rounded-md shadow-xl" style:--company="image-{item.uid}">
-				<PrismicLink
-					document={item}
-					class="grid font-black text-base-100 ring group-hover:text-base-200"
-				>
-					<PrismicImage field={item.data.image} class="h-60 w-full object-cover opacity-100" />
-					<span class="bg-content-100 px-6 py-3"> <PrismicText field={item.data.company} /></span>
-				</PrismicLink>
-			</div>
+<Archive {data} />
+<!-- <Bounded wide={true}>
+	<ArchiveHeader>
+		<Heading1>{meta[0]?.title && meta[0]?.title}</Heading1>
+		{#if meta[0]?.description}
+			<p>{meta[0]?.description}</p>
+		{/if}
+	</ArchiveHeader>
+	<Grid variant="3-col" class="py-12">
+		{#each data.documents.results as item}
+			<CaseStudyCard {item} />
 		{/each}
-	</div>
-	<div class="mt-12 flex items-center gap-4">
-		{#if data.studies.total_pages > 1}
-			{#each Array(data.studies.total_pages) as _, idx}
-				<a
-					href="/case-study/page/{idx + 1}"
-					class={data.studies.page === idx + 1
-						? 'bg-accent flex h-8 w-8 items-center justify-center rounded-full'
-						: 'flex h-8 w-8 items-center justify-center rounded-full'}
-				>
-					{idx + 1}
-				</a>
-			{/each}
-			<span
-				class="border-content/10 text-content fixed bottom-4 right-5 rounded-full border px-3 py-1 text-xs shadow-sm"
-				>{`Showing ${data.studies.results_per_page * (data.studies.page - 1) + 1} to ${
-					data.studies.page === data.studies.total_pages
-						? data.studies.total_results_size
-						: data.studies.results_per_page * data.studies.page
-				} of ${data.studies.total_results_size} results`}
-			</span>{/if}
-	</div>
-</Bounded>
+	</Grid>
+
+	<Pagination
+		totalPages={data.documents.total_pages}
+		totalResults={data.documents.total_results_size}
+		pageNumber={data.documents.page}
+		resultsPerPage={data.documents.results_per_page}
+	/>
+</Bounded> -->

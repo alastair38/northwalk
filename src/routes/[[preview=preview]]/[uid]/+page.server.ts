@@ -2,21 +2,26 @@ import { asText } from '@prismicio/client';
 import * as prismic from '@prismicio/client';
 import { createClient } from '$lib/prismicio';
 import { Resend } from 'resend';
+import { error } from '@sveltejs/kit';
 
 const resend = new Resend('re_UZQ1pwRp_9XuL17t56rdhgtfzHWXaCm97');
 
 export async function load({ params, fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
-	const page = await client.getByUID('page', params.uid);
+	try {
+		const page = await client.getByUID('page', params.uid);
 
-	return {
-		page,
-		title: asText(page.data.title),
-		meta_description: page.data.meta_description,
-		meta_title: page.data.meta_title,
-		meta_image: page.data.meta_image
-	};
+		return {
+			page,
+			title: asText(page.data.title),
+			meta_description: page.data.meta_description,
+			meta_title: page.data.meta_title,
+			meta_image: page.data.meta_image
+		};
+	} catch (err) {
+		error(404, String(err));
+	}
 }
 
 // export const actions = {

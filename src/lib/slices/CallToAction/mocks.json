@@ -3,19 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "AI powered insights for videographers",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
 			"button_link": {
 				"__TYPE__": "LinkContent",
 				"value": {
@@ -27,6 +14,24 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Start Now"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "AI powered insights for videographers"
+			},
+			"width": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"spacing": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"background": {
+				"__TYPE__": "FieldContent",
+				"type": "Select",
+				"value": "brand"
 			}
 		},
 		"items": []

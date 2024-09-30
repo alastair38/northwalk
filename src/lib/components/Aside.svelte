@@ -9,7 +9,7 @@
 </script>
 
 <svelte:element this={tag} {...$$restProps} class={clsx('relative mx-auto max-w-6xl', className)}>
-	<div class="mx-auto flex w-full max-w-6xl flex-col items-center">
+	<div class="flex w-full flex-col items-center">
 		<slot />
 	</div>
 </svelte:element>

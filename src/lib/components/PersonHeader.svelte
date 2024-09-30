@@ -18,7 +18,7 @@
 
 <div class="grid w-full grid-cols-1 place-items-center gap-6 md:grid-cols-2 md:gap-12">
 	<header
-		class="text-content relative flex h-full w-full flex-col items-center justify-center overflow-clip rounded-md bg-base-300/20 p-6 shadow-2xl"
+		class="relative flex h-full w-full flex-col items-center justify-center overflow-clip rounded-md bg-accent-light/80 p-6 text-content shadow-2xl"
 	>
 		<TriangleGrid />
 		<PrismicImage

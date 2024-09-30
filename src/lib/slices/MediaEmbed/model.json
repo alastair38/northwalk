@@ -32,7 +32,7 @@
           "type": "Embed",
           "config": {
             "label": "Link",
-            "placeholder": ""
+            "placeholder": "Embeds for Twitter do not work"
           }
         }
       },

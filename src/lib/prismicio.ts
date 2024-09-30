@@ -1,11 +1,12 @@
 import * as prismic from '@prismicio/client';
 import { type CreateClientConfig, enableAutoPreviews } from '@prismicio/svelte/kit';
 import sm from '../../slicemachine.config.json';
+import { PUBLIC_REPONAME as REPO } from '$env/static/public';
 
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = import.meta.env.VITE_PRISMIC_ENVIRONMENT || sm.repositoryName;
+export const repositoryName = REPO;
 
 /**
  * A list of Route Resolver objects that define how a document's `url` field is resolved.
@@ -20,6 +21,7 @@ const routes: prismic.ClientConfig['routes'] = [
 	{ type: 'people', path: '/people/:uid' },
 	{ type: 'publications', path: '/publications/:uid' },
 	{ type: 'categories', path: '/publications/categories/:uid' },
+	{ type: 'article_categories', path: '/articles/categories/:uid' },
 	{ type: 'team', path: '/people' },
 	{ type: 'post', path: '/articles/:uid' }
 ];
@@ -37,7 +39,12 @@ export const createClient = ({ cookies, ...config }: CreateClientConfig = {}) =>
 			fetchLinks: [
 				'categories.image', // The name of the type and the name of the field
 				'categories.title', // Add as many fields as you need
-				'categories.description'
+				'categories.description',
+				'article_categories.image', // The name of the type and the name of the field
+				'article_categories.title', // Add as many fields as you need
+				'article_categories.description',
+				'people.name',
+				'people.image'
 			]
 		},
 		...config
