@@ -29,7 +29,7 @@ export async function load({ params, fetch, cookies }) {
 export async function entries() {
 	const client = createClient();
 
-	const pages = await client.getAllByType('categories');
+	const pages = await client.getAllByType('article_categories');
 
 	return pages.map((page) => {
 		return {
