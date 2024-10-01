@@ -30,7 +30,8 @@ export function entries() {
 
 export const actions = {
 	email: async ({ request }) => {
-		resend.domains.verify('d91cd9bd-1176-453e-8fc1-35364d380206');
+		// resend.domains.verify('21d74a35-afe5-4f11-9b6f-8a42a899cda2');
+
 		const formData = await request.formData();
 		const email = formData.get('email');
 		const message = formData.get('message');
