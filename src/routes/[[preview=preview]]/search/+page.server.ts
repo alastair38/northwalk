@@ -4,8 +4,6 @@ import { Resend } from 'resend';
 
 import { RESEND_API_KEY as RESEND } from '$env/static/private';
 
-const resend = new Resend(RESEND);
-
 import { createClient } from '$lib/prismicio';
 
 export async function load({ fetch, cookies }) {
@@ -35,6 +33,7 @@ export const actions = {
 		const message = formData.get('message');
 
 		try {
+			const resend = new Resend(RESEND);
 			resend.emails.send({
 				from: 'info@alastaircox.com',
 				to: 'alastair@alastaircox.com',
