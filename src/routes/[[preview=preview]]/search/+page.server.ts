@@ -1,14 +1,12 @@
 import * as prismic from '@prismicio/client';
 
 import { Resend } from 'resend';
+
 import { RESEND_API_KEY as RESEND } from '$env/static/private';
 
 const resend = new Resend(RESEND);
 
-import { asText, mapSliceZone } from '@prismicio/client';
-
 import { createClient } from '$lib/prismicio';
-import { mappers } from '$lib/slices/mappers';
 
 export async function load({ fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
@@ -38,7 +36,7 @@ export const actions = {
 
 		try {
 			resend.emails.send({
-				from: 'alastair@alastaircox.com',
+				from: 'info@alastaircox.com',
 				to: 'alastair@alastaircox.com',
 				replyTo: 'alastair@alastaircox.com',
 				subject: `Website enquiry from ${email}`,
@@ -64,7 +62,7 @@ export const actions = {
     </table><!--/$-->`
 			});
 
-			console.log(message);
+			console.log(request);
 		} catch (error) {
 			console.log(error);
 		}

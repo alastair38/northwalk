@@ -22,7 +22,7 @@
 	</div>
 	<form
 		method="POST"
-		action="/search?/email"
+		action="/search?/emailBrevo"
 		class="w-full"
 		use:enhance={() => {
 			sending = true;
