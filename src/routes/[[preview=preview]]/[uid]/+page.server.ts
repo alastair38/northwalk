@@ -1,11 +1,7 @@
 import { asText } from '@prismicio/client';
 import * as prismic from '@prismicio/client';
 import { createClient } from '$lib/prismicio';
-import { Resend } from 'resend';
 import { error } from '@sveltejs/kit';
-import { RESEND } from '$env/static/private';
-
-const resend = new Resend(RESEND);
 
 export async function load({ params, fetch, cookies }) {
 	const client = createClient({ fetch, cookies });

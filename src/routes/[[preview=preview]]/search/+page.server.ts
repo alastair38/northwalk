@@ -1,7 +1,7 @@
 import * as prismic from '@prismicio/client';
 
 import { Resend } from 'resend';
-import { RESEND } from '$env/static/private';
+import { RESEND_API_KEY as RESEND } from '$env/static/private';
 
 const resend = new Resend(RESEND);
 
@@ -30,13 +30,14 @@ export function entries() {
 
 export const actions = {
 	email: async ({ request }) => {
+		resend.domains.verify('d91cd9bd-1176-453e-8fc1-35364d380206');
 		const formData = await request.formData();
 		const email = formData.get('email');
 		const message = formData.get('message');
 
 		try {
 			resend.emails.send({
-				from: 'onboarding@resend.dev',
+				from: 'alastair@alastaircox.com',
 				to: 'alastair@alastaircox.com',
 				replyTo: 'alastair@alastaircox.com',
 				subject: `Website enquiry from ${email}`,
