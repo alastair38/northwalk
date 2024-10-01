@@ -1,8 +1,9 @@
 import * as prismic from '@prismicio/client';
 
 import { Resend } from 'resend';
+import { RESEND } from '$env/static/private';
 
-const resend = new Resend('re_UZQ1pwRp_9XuL17t56rdhgtfzHWXaCm97');
+const resend = new Resend(RESEND);
 
 import { asText, mapSliceZone } from '@prismicio/client';
 
