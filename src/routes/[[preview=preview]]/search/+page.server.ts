@@ -34,7 +34,7 @@ export const actions = {
 
 		try {
 			const resend = new Resend(RESEND);
-			resend.emails.send({
+			await resend.emails.send({
 				from: 'info@alastaircox.com',
 				to: 'alastair@alastaircox.com',
 				replyTo: 'alastair@alastaircox.com',
@@ -61,7 +61,7 @@ export const actions = {
     </table><!--/$-->`
 			});
 
-			console.log(request);
+			console.log(formData);
 		} catch (error) {
 			console.log(error);
 		}
