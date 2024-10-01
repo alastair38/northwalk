@@ -46,28 +46,30 @@
 			>
 				{#if form?.type === 'success' && sending}
 					<p class="mx-auto">Thank you for your message {form.data?.email}</p>
+
+					<pre>{JSON.stringify(form, null, 2)}</pre>
 				{/if}
 			</div>
 			<div />
 			<div class="mb-5">
-				<label for="email" class="text-content/80 mb-2 block text-sm font-medium">Your email</label>
+				<label for="email" class="mb-2 block text-sm font-medium text-content/80">Your email</label>
 				<input
 					type="email"
 					id="email"
 					name="email"
-					class="text-content/80 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm focus:border-blue-500 focus:ring-blue-500"
+					class="border-gray-300 bg-gray-50 focus:border-blue-500 focus:ring-blue-500 block w-full rounded-lg border p-2.5 text-sm text-content/80"
 					placeholder="name@flowbite.com"
 					required
 				/>
 			</div>
 			<div class="mb-5">
-				<label for="message" class="text-content/80 mb-2 block text-sm font-medium"
+				<label for="message" class="mb-2 block text-sm font-medium text-content/80"
 					>Your message</label
 				>
 				<textarea
 					id="message"
 					name="message"
-					class="text-content/80 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm focus:border-blue-500 focus:ring-blue-500"
+					class="border-gray-300 bg-gray-50 focus:border-blue-500 focus:ring-blue-500 block w-full rounded-lg border p-2.5 text-sm text-content/80"
 					required
 				/>
 			</div>
@@ -77,10 +79,10 @@
 						id="remember"
 						type="checkbox"
 						name="remember"
-						class="focus:ring-3 h-4 w-4 rounded border border-gray-300 bg-gray-50 focus:ring-blue-300"
+						class="focus:ring-3 border-gray-300 bg-gray-50 focus:ring-blue-300 h-4 w-4 rounded border"
 					/>
 				</div>
-				<label for="remember" class="text-content/80 ms-2 text-sm font-medium">Remember me</label>
+				<label for="remember" class="ms-2 text-sm font-medium text-content/80">Remember me</label>
 			</div>
 			<!-- <button
 				disabled={sending}
