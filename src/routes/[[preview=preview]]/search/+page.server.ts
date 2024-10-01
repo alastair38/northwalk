@@ -63,7 +63,11 @@ export const actions = {
       </tbody>
     </table><!--/$-->`
 			});
-		} catch (error) {}
+
+			console.log(message);
+		} catch (error) {
+			console.log(error);
+		}
 
 		// Process the form data and perform actions
 		return { success: true, email, message };
@@ -82,8 +86,6 @@ export const actions = {
 					filters: [prismic.filter.fulltext('document', search?.toString())]
 				});
 			}
-
-			console.log(publications);
 		} catch (error) {}
 
 		// Process the form data and perform actions
