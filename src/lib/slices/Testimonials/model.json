@@ -12,10 +12,24 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Section heading",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Section description",
+            "placeholder": ""
+          }
+        },
         "text": {
           "type": "Text",
           "config": {
-            "label": "Text",
+            "label": "Testimonial text",
             "placeholder": ""
           }
         },

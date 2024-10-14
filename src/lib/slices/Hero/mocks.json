@@ -9,10 +9,8 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "North Walk for your stuff",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Evidence"
+						}
 					}
 				]
 			},
@@ -40,7 +38,6 @@
 				"value": "Download Now"
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"url": "https://images.unsplash.com/photo-1610040855959-27944b04f12d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjI5NDQ2MDR8MA&ixlib=rb-4.0.3&q=85",
 				"alt": "orange fruit on brown wooden table",
 				"origin": {
@@ -59,9 +56,80 @@
 						"y": 0
 					}
 				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "dark",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Largest"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur ex non esse velit. Ipsum eiusmod nisi do aliquip cillum dolor commodo. Tempor aute aliqua aliqua sit amet reprehenderit velit laborum ipsum aute mollit nulla."
+						}
+					}
+				]
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "vote",
+				"type": "Text"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+					"width": 3277,
+					"height": 4092
+				},
+				"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+				"width": 3277,
+				"height": 4092,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

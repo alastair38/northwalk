@@ -5,13 +5,23 @@
 		"primary": {
 			"text": {
 				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "Do it now 'cause' it ain't that long till' it's gone.\nAin't no time like the present to avoid a turn that's wrong.\nRemember: it ain't a sprint, it's a marathon.\nOur ancestor's shoulders we stand upon."
+				"value": "got",
+				"type": "Text"
 			},
 			"citation": {
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Timothy J Parker, Quannum Projects"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Great service"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Collaboratively orchestrate out-of-the-box opportunities vis-a-vis magnetic intellectual capital. "
 			}
 		},
 		"items": []

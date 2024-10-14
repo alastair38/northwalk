@@ -14,7 +14,7 @@
 		variant === 'default' && 'text-3xl md:text-5xl',
 		variant === 'small' && 'text-xl md:text-3xl',
 		variant === 'xsmall' && ' md:text-xl',
-		variant === 'impact' && 'text-5xl font-black md:text-7xl',
+		variant === 'impact' && 'text-3xl font-black md:text-5xl',
 		className
 	)}
 	{...$$restProps}

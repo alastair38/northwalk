@@ -1,25 +1,29 @@
 <script lang="ts">
+	import Argyll from '$lib/components/Argyll.svelte';
 	import Bounded from '$lib/components/Bounded.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
 	import IconArrowLeft from '~icons/ph/caret-left';
 	import IconArrowRight from '~icons/ph/caret-right';
-	import { page } from '$app/stores';
 
 	export let slice: Content.CarouselSlice;
 
 	function currentIndicator(i: number) {
 		const indicators = document.querySelectorAll('.indicators');
 
-		indicators.forEach((ind) => ind.classList.remove('bg-accent/50'));
-		indicators[i]?.classList.add('bg-accent/50');
+		indicators.forEach((ind) => ind.classList.remove('bg-accent-light'));
+		indicators[i]?.classList.add('bg-accent-light');
 	}
 </script>
 
-<Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<Bounded
+	class="relative overflow-clip "
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+>
 	<div class="space-y-6 text-center">
 		{#if slice.primary.title}
-			<h2 class="text-4xl font-black">{slice.primary.title}</h2>
+			<h2 class="text-4xl font-black text-accent">{slice.primary.title}</h2>
 		{/if}
 
 		{#if slice.primary.description}
@@ -107,7 +111,7 @@
 					<a
 						data-indicator={i}
 						on:click={() => currentIndicator(i)}
-						class={`indicators flex h-3 w-3 items-center justify-center rounded-full border ${i === 0 && 'bg-accent/50'}`}
+						class={`indicators flex h-3 w-3 items-center justify-center rounded-full border ${i === 0 && 'bg-accent-light'}`}
 						href={`#slide-${i}`}
 					>
 					</a>

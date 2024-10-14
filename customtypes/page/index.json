@@ -27,6 +27,12 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"full_width_image": {
+							"type": "SharedSlice"
+						},
+						"services": {
+							"type": "SharedSlice"
+						},
 						"carousel": {
 							"type": "SharedSlice"
 						},
@@ -66,16 +72,10 @@
 						"latest_articles": {
 							"type": "SharedSlice"
 						},
-						"call_to_action": {
-							"type": "SharedSlice"
-						},
 						"case_studies": {
 							"type": "SharedSlice"
 						},
 						"showcase": {
-							"type": "SharedSlice"
-						},
-						"bento": {
 							"type": "SharedSlice"
 						},
 						"hero": {

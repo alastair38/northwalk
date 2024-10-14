@@ -30,7 +30,9 @@
                 "config": {
                   "label": "Person",
                   "select": "document",
-                  "customtypes": []
+                  "customtypes": [
+                    "people"
+                  ]
                 }
               }
             }

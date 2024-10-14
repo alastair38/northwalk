@@ -6,7 +6,7 @@ export async function load({ fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
 	const page = await client.getSingle('team', {
-		fetchLinks: ['people.name', 'people.image']
+		fetchLinks: ['people.name', 'people.image', 'people.work_title']
 	});
 
 	return {

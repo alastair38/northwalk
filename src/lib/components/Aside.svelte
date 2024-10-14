@@ -8,7 +8,7 @@
 	export { className as class };
 </script>
 
-<svelte:element this={tag} {...$$restProps} class={clsx('relative mx-auto max-w-6xl', className)}>
+<svelte:element this={tag} {...$$restProps} class={clsx('relative mx-auto max-w-7xl', className)}>
 	<div class="flex w-full flex-col items-center">
 		<slot />
 	</div>

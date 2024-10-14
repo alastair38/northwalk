@@ -1,46 +1,70 @@
 <script lang="ts">
-	import TriangleGrid from '$lib/components/TriangleGrid.svelte';
+	import Bounded from '$lib/components/Bounded.svelte';
+	import Grid from '$lib/components/Grid.svelte';
+	import IconSparkle from '~icons/ph/rocket-launch-duotone';
 	import type { Content } from '@prismicio/client';
+	import { PrismicText } from '@prismicio/svelte';
+	import Heading2 from '$lib/components/Heading2.svelte';
 
 	export let slice: Content.TestimonialsSlice;
 </script>
 
-<section class=" py-24" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<TriangleGrid />
-	<div class="mx-auto flex h-96 max-w-4xl items-center text-base-100">
+<Bounded
+	wide={true}
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+	class="bg-content/5"
+>
+	<Grid variant="3-col" class="relative items-center p-6">
+		<span class="dotted mask-radial absolute -inset-12 -z-10 text-accent"></span>
+		{#if slice.primary.heading || slice.primary.description}
+			<div class="relative space-y-6 text-pretty text-center md:col-start-3 md:row-start-1">
+				<Heading2 class="flex items-center justify-center gap-4 font-black" variant="small"
+					><IconSparkle class="-rotate-90 text-accent" />
+					{slice.primary.heading} <span aria-hidden="true" class="-pl-1 text-accent">...</span>
+				</Heading2>
+				{#if slice.primary.description}
+					<p>{slice.primary.description}</p>
+				{/if}
+			</div>
+		{/if}
 		<div
-			aria-hidden="true"
-			class="-mr-16 w-4/5 scale-75 gap-6 space-y-6 rounded-md border bg-content-100 p-8 opacity-70 blur-sm"
+			class="-ml-24 flex h-96 max-w-4xl items-center md:col-span-2 md:col-start-1 md:row-start-1"
 		>
-			<ul class="flex items-center justify-end gap-2">
-				<li class="bg-accent-dark h-3 w-3 rounded-full"></li>
-				<li class="h-3 w-3 rounded-full bg-brand-300"></li>
-				<li class="h-3 w-3 rounded-full bg-base-300"></li>
-			</ul>
-			<p>{slice.primary.text}</p>
-			<p class="font-medium italic">{slice.primary.citation}</p>
+			<div
+				aria-hidden="true"
+				class="pointer-events-none -mr-24 w-4/5 scale-50 select-none gap-6 space-y-6 rounded-lg bg-base-light p-8 shadow-2xl blur-sm"
+			>
+				<ul class="flex items-center justify-end gap-2">
+					<li class="h-3 w-3 rounded-full bg-accent-dark"></li>
+					<li class="h-3 w-3 rounded-full bg-brand"></li>
+					<li class="h-3 w-3 rounded-full bg-highlight-400"></li>
+				</ul>
+				<p>{slice.primary.text}</p>
+				<p class="font-medium italic">{slice.primary.citation}</p>
+			</div>
+			<blockquote class="relative z-10 w-4/5 space-y-6 rounded-lg bg-accent-light p-8 shadow-2xl">
+				<ul aria-hidden="true" class="flex items-center justify-end gap-2">
+					<li class="h-3 w-3 rounded-full bg-accent-dark"></li>
+					<li class="h-3 w-3 rounded-full bg-brand"></li>
+					<li class="h-3 w-3 rounded-full bg-highlight-400"></li>
+				</ul>
+				<p>{slice.primary.text}</p>
+				<p class="font-medium italic">{slice.primary.citation}</p>
+				<div class="absolute -bottom-8 left-0 right-0 -z-0 h-12 bg-base/70 blur-3xl"></div>
+			</blockquote>
+			<div
+				aria-hidden="true"
+				class=" pointer-events-none -ml-24 w-4/5 scale-50 select-none space-y-6 rounded-lg bg-base-light p-8 shadow-2xl blur-sm"
+			>
+				<ul class="flex items-center justify-end gap-2">
+					<li class="h-3 w-3 rounded-full bg-accent-dark"></li>
+					<li class="h-3 w-3 rounded-full bg-brand"></li>
+					<li class="h-3 w-3 rounded-full bg-highlight-400"></li>
+				</ul>
+				<p>{slice.primary.text}</p>
+				<p class="font-medium italic">{slice.primary.citation}</p>
+			</div>
 		</div>
-		<blockquote class="relative w-4/5 space-y-6 rounded-md border bg-content-100 p-8">
-			<ul aria-hidden="true" class="flex items-center justify-end gap-2">
-				<li class="bg-accent-dark h-3 w-3 rounded-full"></li>
-				<li class="h-3 w-3 rounded-full bg-brand-300"></li>
-				<li class="h-3 w-3 rounded-full bg-base-300"></li>
-			</ul>
-			<p>{slice.primary.text}</p>
-			<p class="font-medium italic">{slice.primary.citation}</p>
-			<div class="absolute -bottom-8 left-0 right-0 -z-0 h-12 bg-content-100/70 blur-3xl"></div>
-		</blockquote>
-		<div
-			aria-hidden="true"
-			class="-ml-16 w-4/5 scale-75 space-y-6 rounded-md border bg-content-100 p-8 opacity-70 blur-sm"
-		>
-			<ul class="flex items-center justify-end gap-2">
-				<li class="bg-accent-dark h-3 w-3 rounded-full"></li>
-				<li class="h-3 w-3 rounded-full bg-brand-300"></li>
-				<li class="h-3 w-3 rounded-full bg-base-300"></li>
-			</ul>
-			<p>{slice.primary.text}</p>
-			<p class="font-medium italic">{slice.primary.citation}</p>
-		</div>
-	</div>
-</section>
+	</Grid>
+</Bounded>

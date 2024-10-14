@@ -1,3 +1,7 @@
+@import '@fontsource/geist-sans';
+
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource/geist-sans/900.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -90,7 +94,7 @@
 	}
 }
 
-@keyframes spin {
+@keyframes scale {
 	from {
 		transform: scale(0.8);
 	}
@@ -124,6 +128,21 @@ figure[data-provider='Twitter'] {
 
 figure > .twitter-tweet.twitter-tweet-rendered {
 	@apply mx-auto;
+}
+
+.stripes {
+	background-image: linear-gradient(
+		0deg,
+		hsl(var(--color-content) / 0.75) 25%,
+		transparent 25%,
+		transparent 50%,
+		hsl(var(--color-content) / 0.75) 50%,
+		hsl(var(--color-content) / 0.75) 75%,
+		transparent 75%,
+		transparent 100%
+	);
+	background-size: 4px 4px;
+	/* text-shadow: -6px 0px 0px rgb(139, 5, 172); */
 }
 
 .carousel {
@@ -241,8 +260,119 @@ body:has(dialog[open]) {
 	transition: 400ms;
 }
 
-#mask-header img {
-	mask-image: linear-gradient(to top, transparent 15%, rgb(42, 5, 5) 75%);
+/* ADD block margin to any aside/section elements within the main body of pages. This lets the same slices be added to both the home page (no margin required) and standard pages (where a margin is required) */
+
+body:has(#main-header) main aside,
+body:has(#main-header) main section {
+	@apply my-6;
+}
+
+/* BACKGROUND PATTERNS */
+
+.folded {
+	background-image: linear-gradient(
+		45deg,
+		hsl(var(--color-base) / 1),
+		hsl(var(--color-base-dark) / 0.1)
+	);
+	background-size: 12.5% 12.5%;
+}
+
+.hatched {
+	background-image: repeating-linear-gradient(
+			90deg,
+			currentColor 0,
+			currentColor 5%,
+			transparent 0,
+			transparent 50%
+		),
+		repeating-linear-gradient(
+			180deg,
+			currentColor 0,
+			currentColor 5%,
+			transparent 0,
+			transparent 50%
+		);
+	background-size: 1em 1em;
+	z-index: -10;
+	opacity: 0.15;
+}
+
+.striped {
+	background-image: linear-gradient(
+		135deg,
+		currentColor 0%,
+		currentColor 5%,
+		transparent 5%,
+		transparent 10%,
+		currentColor 10%,
+		currentColor 15%,
+		transparent 15%,
+		transparent 20%,
+		currentColor 20%,
+		currentColor 25%,
+		transparent 25%,
+		transparent 30%,
+		currentColor 30%,
+		currentColor 35%,
+		transparent 35%,
+		transparent 40%,
+		currentColor 40%,
+		currentColor 45%,
+		transparent 45%,
+		transparent 50%,
+		currentColor 50%,
+		currentColor 55%,
+		transparent 55%,
+		transparent 60%,
+		currentColor 60%,
+		currentColor 65%,
+		transparent 65%,
+		transparent 70%,
+		currentColor 70%,
+		currentColor 75%,
+		transparent 70%,
+		transparent 80%,
+		currentColor 80%,
+		currentColor 85%,
+		transparent 85%,
+		transparent 90%,
+		currentColor 90%,
+		currentColor 95%,
+		transparent 95%
+	);
+	background-size: 1.25em 1.25em;
+
+	opacity: 0.25;
+}
+
+.mesh {
+	background-image: radial-gradient(currentColor 15%, transparent 16%),
+		linear-gradient(45deg, transparent 49%, currentColor 49% 51%, transparent 51%),
+		linear-gradient(-45deg, transparent 49%, currentColor 49% 51%, transparent 51%);
+	background-size: 1em 1em;
+
+	opacity: 0.25;
+}
+
+.dotted {
+	background-image: radial-gradient(circle, currentColor 10%, transparent 11%);
+	background-size: 1em 1em;
+}
+
+.dotted-light {
+	background-image: radial-gradient(circle, hsl(var(--color-content) / 0.1) 10%, transparent 11%);
+	background-size: 1em 1em;
+}
+
+.mask {
+	-webkit-mask-image: linear-gradient(to top, transparent 10%, rgb(42, 5, 5) 65%);
+	mask-image: linear-gradient(to top, transparent 10%, rgb(42, 5, 5) 65%);
+}
+
+.mask-radial {
+	-webkit-mask-image: radial-gradient(circle at 40% 40%, black 0%, transparent 50%);
+	mask-image: radial-gradient(circle at 40% 40%, black 0%, transparent 50%);
 }
 
 .glass-container {

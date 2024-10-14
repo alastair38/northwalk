@@ -13,11 +13,7 @@
 	export let background: Background = 'default';
 </script>
 
-<svelte:element
-	this={tag}
-	{...$$restProps}
-	class={clsx('px-4 py-14 md:px-8 md:py-20 lg:py-24', className)}
->
+<svelte:element this={tag} {...$$restProps} class={clsx('px-4 py-12 md:px-8 md:py-16', className)}>
 	<div
 		class={clsx(
 			'mx-auto flex w-full flex-col items-center',

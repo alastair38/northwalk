@@ -44,7 +44,8 @@ export const createClient = ({ cookies, ...config }: CreateClientConfig = {}) =>
 				'article_categories.title', // Add as many fields as you need
 				'article_categories.description',
 				'people.name',
-				'people.image'
+				'people.image',
+				'people.work_title'
 			]
 		},
 		...config

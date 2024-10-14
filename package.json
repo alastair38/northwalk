@@ -47,6 +47,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/dm-sans": "^5.0.6",
+		"@fontsource/geist-sans": "^5.1.0",
 		"@getbrevo/brevo": "^2.2.0",
 		"@prismicio/client": "^7.8.0",
 		"@prismicio/helpers": "^2.3.9",

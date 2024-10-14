@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '@fontsource-variable/dm-sans';
 	import '../app.css';
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';

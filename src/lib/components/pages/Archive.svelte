@@ -20,7 +20,7 @@
 	);
 </script>
 
-<Bounded wide={true}>
+<Bounded tag="div" wide={true}>
 	<ArchiveHeader>
 		<Heading1>
 			{#if data.page?.data?.title}

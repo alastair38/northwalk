@@ -10,7 +10,7 @@ export default async function mapper({ slice, context }) {
 			slice.primary.categories.map(async (item) => {
 				if (prismic.isFilled.contentRelationship(item.category)) {
 					const items = await context.client.getByID(item.category.id);
-					console.log('items', items);
+
 					return /** @type {prismic.Content.CaseStudyDocument} */ (items);
 				}
 			})

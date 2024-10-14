@@ -17,7 +17,7 @@
 		{#each Array(grid[0]) as _, i}
 			{#each Array(grid[1]) as __, j}
 				<path
-					fill="currentColor"
+					fill="hsl(var(--color-brand-light) / 1)"
 					opacity=".2"
 					class="triangle-grid-item"
 					d={`M${j * 32 + 5},${i * 32 + 10}l-3.75,2.165l0,-4.33l3.75,2.165z`}

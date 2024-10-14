@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -9,6 +10,7 @@ export default {
 			current: 'currentColor',
 			black: colors.black,
 			white: colors.white,
+			highlight: colors.yellow,
 			base: {
 				light: 'hsl(var(--color-base-light) / <alpha-value>)',
 				DEFAULT: 'hsl(var(--color-base) / <alpha-value>)',
@@ -31,6 +33,20 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: [...defaultTheme.fontFamily.sans]
+			},
+			backgroundImage: {
+				space:
+					"url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNjAwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDE1MCAxNTAnPgo8ZmlsdGVyIGlkPSdpJyB4PScwJyB5PScwJz4KCTxmZUNvbG9yTWF0cml4IHR5cGU9J21hdHJpeCcgdmFsdWVzPScxIDAgMCAwIDAgIDAgMSAwIDAgMCAgMCAwIDEgMCAwICAwIDAgMCAwIDAnIC8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSduJyB4PScwJyB5PScwJz4KCTxmZVR1cmJ1bGVuY2UgdHlwZT0ndHVyYnVsZW5jZScgYmFzZUZyZXF1ZW5jeT0nLjcnIHJlc3VsdD0nZnV6eicgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPgoJPGZlQ29tcG9zaXRlIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J2Z1enonIG9wZXJhdG9yPSdhcml0aG1ldGljJyBrMT0nMCcgazI9JzEnIGszPSctNzMnIGs0PScuMDEnIC8+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjMDMwMzFhJy8+CjxyZWN0IHg9Jy0xJScgeT0nLTElJyB3aWR0aD0nMTAyJScgaGVpZ2h0PScxMDIlJyBmaWxsPScjZmZmZmZmJyBmaWx0ZXI9J3VybCgjbiknIG9wYWNpdHk9JzEnLz4KPHJlY3QgeD0nLTElJyB5PSctMSUnIHdpZHRoPScxMDIlJyBoZWlnaHQ9JzEwMiUnIGZpbGw9JyMwMzAzMWEnIGZpbHRlcj0ndXJsKCNpKScgb3BhY2l0eT0nMScvPgo8L3N2Zz4=')",
+				plaid:
+					'repeating-linear-gradient(45deg, transparent 0px, transparent 100px, hsl(var(--color-accent) / .15) 100px, hsl(var(--color-accent) / .15) 200px, transparent 200px, transparent 400px, hsl(var(--color-content) / .15) 400px, hsl(var(--color-content) / .15) 401px), repeating-linear-gradient(135deg, transparent 0px, transparent 100px, hsl(var(--color-base-dark) / .15) 100px, hsl(var(--color-base-dark) / .15) 300px, hsl(var(--color-brand) / .15) 300px, hsl(var(--color-brand) / .15) 500px, rgba(255, 255,255, .85) 500px, rgba(255, 255,255, .85) 600px, transparent 600px, transparent 800px)',
+				argyle:
+					'repeating-linear-gradient(45deg, transparent 0px, transparent 300px, hsl(var(--color-accent-light) / .1) 300px, hsl(var(--color-accent-light) / .1) 400px, transparent 400px, transparent 500px, hsl(var(--color-content) / .15) 500px, hsl(var(--color-content) / .15) 501px), repeating-linear-gradient(135deg, transparent 0px, transparent 300px, hsl(var(--color-brand-light) / .1) 300px, hsl(var(--color-brand-light) / .1) 600px, hsl(var(--color-accent) / .15) 600px, hsl(var(--color-accent) / .15) 900px)'
+			},
+			dropShadow: {
+				highlight: '0 3px 8px hsl(var(--color-accent) / 1)'
+			},
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {

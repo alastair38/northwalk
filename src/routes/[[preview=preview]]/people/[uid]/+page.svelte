@@ -6,6 +6,7 @@
 
 	import MaskImage from '$lib/components/MaskImage.svelte';
 	import RelatedContent from '$lib/components/RelatedContent.svelte';
+	import RelatedPublications from '$lib/components/RelatedPublications.svelte';
 
 	export let data;
 
@@ -27,6 +28,11 @@
 <MaskImage image={data.page.data.image} />
 <Bounded tag="article">
 	<PersonHeader data={data.page} />
-	<RelatedContent heading={'Recent articles'} {articles} />
-	<RelatedContent heading={'Publications'} articles={pubs} />
+
+	{#if articles.length !== 0}
+		<RelatedContent heading={'Recent articles'} {articles} />
+	{/if}
+	{#if pubs.length !== 0}
+		<RelatedContent heading={'Publications'} articles={pubs} />
+	{/if}
 </Bounded>

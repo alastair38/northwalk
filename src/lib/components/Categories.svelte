@@ -6,8 +6,6 @@
 
 	export { className as class };
 	export let categories;
-
-	console.log(categories);
 </script>
 
 <div class={clsx('my-6 flex gap-6 text-sm', className)}>

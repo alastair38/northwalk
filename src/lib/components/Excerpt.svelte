@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asText } from '@prismicio/helpers';
 	import { PrismicRichText } from '@prismicio/svelte';
 	import clsx from 'clsx';
 

@@ -13,14 +13,29 @@
 	export let caseStudies: CaseStudyDocument[] = [];
 </script>
 
-<Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<Heading2 variant="impact" class="max-w-3xl text-center">
-		<PrismicText field={slice.primary.heading} /></Heading2
-	>
+<Bounded
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+	wide={true}
+	class={clsx(
+		'relative',
+		slice.variation === 'dark' ? 'bg-gradient-to-b from-content-dark to-brand-dark text-base' : '',
+		slice.variation === 'dark' && slice.primary.top_margin && 'mt-12 md:mt-16'
+	)}
+>
+	<div class="z-10">
+		<Heading2 variant="impact" class="max-w-3xl text-center">
+			<PrismicText field={slice.primary.heading} /></Heading2
+		>
 
-	<div class="text-content/80 mx-auto mt-6 max-w-prose text-balance text-center text-lg">
-		<PrismicRichText field={slice.primary.body} />
+		<div class="mx-auto mt-6 max-w-prose text-balance text-center text-lg">
+			<PrismicRichText field={slice.primary.body} />
+		</div>
 	</div>
+
+	{#if slice.variation === 'dark'}
+		<div class="dotted mask-radial absolute inset-0 z-0 text-highlight-400/30"></div>
+	{/if}
 
 	<div class="mt-16 grid gap-16 md:mt-20">
 		{#each caseStudies as caseStudy, index}
@@ -31,7 +46,7 @@
 					<h3 class="text-xl font-bold md:text-2xl">
 						<PrismicText field={caseStudy.data.company} />
 					</h3>
-					<div class="text-content/80">
+					<div>
 						<PrismicRichText field={caseStudy.data.description} />
 					</div>
 
@@ -39,8 +54,8 @@
 				</div>
 
 				<div class={clsx('relative lg:col-span-2', index % 2 && 'md:-order-1')}>
-					<div class="image-glow bg-accent-dark -bottom-8 -left-4"></div>
-					<div class="image-glow -right-4 -top-8 bg-brand-100"></div>
+					<div class="image-glow -bottom-8 -left-4 bg-accent-dark"></div>
+					<div class="image-glow bg-brand-100 -right-4 -top-8"></div>
 					<PrismicImage
 						field={caseStudy.data.image}
 						sizes="(max-width: 768px) 100vw, 50vw"

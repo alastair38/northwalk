@@ -27,9 +27,9 @@
 	};
 </script>
 
-<header class="p-4 md:p-6">
+<header id={`${$page.url.pathname === '/' ? 'home-header' : 'main-header'}`} class="p-4 md:p-6">
 	<nav
-		class="text-content mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium md:flex-row md:items-center"
+		class={`mx-auto flex max-w-6xl flex-col justify-between ${$page.url.pathname === '/' ? 'rounded-md bg-base shadow-2xl' : ''} px-4 py-2 font-medium text-content md:flex-row md:items-center`}
 		aria-label="Main"
 	>
 		<div class="flex items-center justify-between">
@@ -40,7 +40,7 @@
 
 			<button
 				type="button"
-				class="text-content block p-2 text-3xl md:hidden"
+				class="block p-2 text-3xl text-content md:hidden"
 				aria-expanded={isOpen}
 				on:click={toggleOpen}
 			>
@@ -52,14 +52,14 @@
 		<!-- Mobile Nav -->
 		<div
 			class={clsx(
-				'bg-base fixed inset-0 z-40 flex flex-col items-end pr-4 pt-6 transition-transform duration-300 ease-in-out md:hidden',
+				'fixed inset-0 z-40 flex flex-col items-end bg-base pr-4 pt-6 transition-transform duration-300 ease-in-out md:hidden',
 				isOpen ? 'translate-x-0' : 'translate-x-[100%]'
 			)}
 		>
 			<button
 				aria-expanded={isOpen}
 				type="button"
-				class="text-content block p-2 text-3xl md:hidden"
+				class="block p-2 text-3xl text-content md:hidden"
 				on:click={toggleOpen}
 			>
 				<span class="sr-only">Close</span>
@@ -107,7 +107,7 @@
 						<PrismicLink
 							on:click={close}
 							field={item.link}
-							class={`hover:text-content/50 inline-flex items-center rounded-full px-3 py-1 focus-visible:outline focus-visible:outline-offset-2 ${isActive(item.link) ? 'decoration-brand underline' : ''}`}
+							class={`inline-flex items-center rounded-full px-3 py-1 hover:text-content/50 focus-visible:outline focus-visible:outline-offset-2 ${isActive(item.link) ? 'underline decoration-brand' : ''}`}
 							aria-current={isActive(item.link) ? 'page' : undefined}
 						>
 							{item.label}

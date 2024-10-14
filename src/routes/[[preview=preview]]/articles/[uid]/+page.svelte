@@ -36,7 +36,7 @@
 	);
 </script>
 
-<MaskImage image={data.page.data.image} />
+<MaskImage image={data.page.data.image} class="mask opacity-10 mix-blend-multiply" />
 <Bounded tag="article">
 	<ArticleHeader>
 		<DateTime dateTime={data.page.first_publication_date} />

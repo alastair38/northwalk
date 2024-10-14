@@ -16,11 +16,10 @@
 	};
 </script>
 
-<div class="grid w-full grid-cols-1 place-items-center gap-6 md:grid-cols-2 md:gap-12">
+<div class="grid w-full grid-cols-1 place-items-center">
 	<header
-		class="relative flex h-full w-full flex-col items-center justify-center overflow-clip rounded-md bg-accent-light/80 p-6 text-content shadow-2xl"
+		class="relative flex h-full w-full flex-col items-center justify-center overflow-clip text-content"
 	>
-		<TriangleGrid />
 		<PrismicImage
 			field={data.data.image}
 			class="mb-2 h-24 w-24 rounded-full object-cover opacity-100"

@@ -9,7 +9,7 @@
 	export let data;
 </script>
 
-<Bounded>
+<Bounded tag="div" wide={true}>
 	<PageHeader>
 		<Heading1>
 			<PrismicText field={data.page.data.title} />

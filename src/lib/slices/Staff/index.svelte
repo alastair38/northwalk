@@ -26,32 +26,39 @@
 		(person) =>
 			person.person as typeof person.person & {
 				uid: PeopleDocument['uid'];
-				data: Pick<PeopleDocument['data'], 'name' | 'image'>;
+				data: Pick<PeopleDocument['data'], 'name' | 'image' | 'work_title'>;
 			}
 	);
 </script>
 
-<Aside class="py-6" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<Heading2 variant="small" class="my-8 self-start text-3xl font-medium"
-		>{slice.primary.title}</Heading2
-	>
+<Aside
+	class="w-full rounded-md bg-base-light p-6 font-medium md:p-12"
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+>
+	{#if slice.primary.title}
+		<Heading2 variant="xsmall" class="mb-8 self-start font-black ">
+			{slice.primary.title}
+		</Heading2>
+	{/if}
 
-	<Grid>
+	<Grid variant="auto">
 		{#if staff.length !== 0}
 			{#each staff as item}
 				<PrismicLink
 					field={item}
-					class="group relative w-full overflow-clip rounded-md rounded-md bg-accent-light/20 shadow-2xl outline outline-1 outline-offset-4 outline-content/10"
+					class="group relative w-full overflow-clip rounded-md rounded-md bg-base shadow-2xl outline outline-1 outline-offset-4 outline-content/10"
 				>
 					<div class="overflow-clip">
 						<PrismicImage
-							class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+							class="aspect-square h-32 w-full object-cover transition-transform duration-300 group-hover:scale-105 md:h-64"
 							field={item?.data?.image}
 						/>
 					</div>
 
 					<span class="flex w-fit items-center gap-2 px-3 py-2 font-medium">
 						{item?.data?.name}
+						{` - ${item?.data?.work_title}`}
 						<IconArrowRight
 							aria-hidden="true"
 							class="text-accent transition-transform duration-200 group-hover:translate-x-1"
