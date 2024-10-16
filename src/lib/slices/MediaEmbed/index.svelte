@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import IconTwitter from '~icons/ph/x-logo';
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Link from '$lib/components/utilities/Link.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicRichText, PrismicEmbed } from '@prismicio/svelte';
 
-	import ButtonLink from '$lib/components/ButtonLink.svelte';
-	import Divider from '$lib/components/Divider.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import ButtonLink from '$lib/components/utilities/ButtonLink.svelte';
+
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 
 	export let slice: Content.MediaEmbedSlice;
 </script>

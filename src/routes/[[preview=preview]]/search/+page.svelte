@@ -2,10 +2,10 @@
 	import { SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import type { PageData } from './$types';
 	import { enhance } from '$app/forms';
-	import SearchForm from '$lib/components/SearchForm.svelte';
+	import SearchForm from '$lib/components/utilities/SearchForm.svelte';
 
 	export let data: PageData;
 </script>

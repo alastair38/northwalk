@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import IconCircleNotch from '~icons/ph/circle-notch';
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Button from '$lib/components/utilities/Button.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicRichText } from '@prismicio/svelte';
 

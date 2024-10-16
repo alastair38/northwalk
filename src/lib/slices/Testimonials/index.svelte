@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Grid from '$lib/components/Grid.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Grid from '$lib/components/layout/Grid.svelte';
 	import IconSparkle from '~icons/ph/rocket-launch-duotone';
 	import type { Content } from '@prismicio/client';
 	import { PrismicText } from '@prismicio/svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let slice: Content.TestimonialsSlice;
 </script>
@@ -16,7 +17,8 @@
 	class="bg-content/5"
 >
 	<Grid variant="3-col" class="relative items-center p-6">
-		<span class="dotted mask-radial absolute -inset-12 -z-10 text-accent"></span>
+		<Dotted variant="rounded" class="text-content" />
+
 		{#if slice.primary.heading || slice.primary.description}
 			<div class="relative space-y-6 text-pretty text-center md:col-start-3 md:row-start-1">
 				<Heading2 class="flex items-center justify-center gap-4 font-black" variant="small"

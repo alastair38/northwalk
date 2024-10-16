@@ -2,14 +2,14 @@
 	import { PrismicText, SliceZone } from '@prismicio/svelte';
 	import { components } from '$lib/slices';
 
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Authors from '$lib/components/Authors.svelte';
-	import Categories from '$lib/components/Categories.svelte';
-	import TriangleGrid from '$lib/components/TriangleGrid.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Authors from '$lib/components/relatedContent/Authors.svelte';
+	import Categories from '$lib/components/relatedContent/Categories.svelte';
 
 	import type { CategoriesDocument, PeopleDocument } from '../../../../prismicio-types.js';
-	import Heading1 from '$lib/components/Heading1.svelte';
-	import FeaturedImage from '$lib/components/FeaturedImage.svelte';
+	import Heading1 from '$lib/components/utilities/Heading1.svelte';
+	import FeaturedImage from '$lib/components/utilities/FeaturedImage.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let data;
 
@@ -30,9 +30,9 @@
 	);
 </script>
 
-<Bounded class="mt-12">
+<Dotted variant="faded" class="-z-40 text-content/50" />
+<Bounded class=" mt-12">
 	<header class="mx-auto max-w-3xl">
-		<TriangleGrid opacity={0.5} />
 		<Heading1 variant="small">{data.page.data.title}</Heading1>
 
 		{#if authors.length > 0}

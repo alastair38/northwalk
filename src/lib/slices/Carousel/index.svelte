@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Argyll from '$lib/components/Argyll.svelte';
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
 	import IconArrowLeft from '~icons/ph/caret-left';

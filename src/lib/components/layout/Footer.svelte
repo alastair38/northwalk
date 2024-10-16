@@ -1,7 +1,7 @@
 <script>
 	import { PrismicLink } from '@prismicio/svelte';
 
-	import WordMark from './WordMark.svelte';
+	import WordMark from '../WordMark.svelte';
 
 	/** @type {import("@prismicio/client").Content.SettingsDocument} */
 	export let settings;
@@ -9,7 +9,7 @@
 
 <footer class="mt-auto">
 	<nav
-		class="border-brand-light/10 flex flex-col items-center justify-between gap-6 border-t px-8 py-7 md:flex-row"
+		class="flex flex-col items-center justify-between gap-6 border-t border-brand-light/10 px-8 py-7 md:flex-row"
 		aria-label="Footer"
 	>
 		<a href="/">

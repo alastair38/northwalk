@@ -4,12 +4,12 @@
 	import IconClose from '~icons/ph/x-bold';
 	import IconMenu from '~icons/ph/list-bold';
 
-	import WordMark from './WordMark.svelte';
-	import ButtonLink from './ButtonLink.svelte';
+	import WordMark from '../WordMark.svelte';
+	import ButtonLink from '../utilities/ButtonLink.svelte';
 	import clsx from 'clsx';
 	import { asLink } from '@prismicio/client';
 	import { page } from '$app/stores';
-	import Search from './Search.svelte';
+	import Search from '../utilities/Search.svelte';
 
 	/** @type {import("@prismicio/client").Content.SettingsDocument} */
 	export let settings;

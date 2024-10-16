@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage } from '@prismicio/svelte';
 

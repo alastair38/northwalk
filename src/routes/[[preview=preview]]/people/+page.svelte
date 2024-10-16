@@ -2,9 +2,9 @@
 	import { SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Heading1 from '$lib/components/Heading1.svelte';
-	import PageHeader from '$lib/components/PageHeader.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Heading1 from '$lib/components/utilities/Heading1.svelte';
+	import PageHeader from '$lib/components/headers/PageHeader.svelte';
 
 	export let data;
 </script>

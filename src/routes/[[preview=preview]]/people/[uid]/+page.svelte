@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 
-	import PersonHeader from '$lib/components/PersonHeader.svelte';
+	import PersonHeader from '$lib/components/headers/PersonHeader.svelte';
 	import type { Content } from '@prismicio/client';
 
-	import MaskImage from '$lib/components/MaskImage.svelte';
-	import RelatedContent from '$lib/components/RelatedContent.svelte';
-	import RelatedPublications from '$lib/components/RelatedPublications.svelte';
+	import MaskImage from '$lib/components/backgrounds/MaskImage.svelte';
+	import RelatedContent from '$lib/components/relatedContent/RelatedContent.svelte';
+	import RelatedPublications from '$lib/components/relatedContent/RelatedPublications.svelte';
 
 	export let data;
 

@@ -38,7 +38,7 @@
 	}}
 >
 	<div
-		class="focus-within:border-brand border-brand-light/10 group flex items-center gap-3 border-b p-2"
+		class="group flex items-center gap-3 border-b border-brand-light/10 p-2 focus-within:border-brand"
 	>
 		<label aria-label="search" for="searchInput" class="text-content/80"
 			><IconSearch class="h-6 w-6 " />
@@ -52,7 +52,7 @@
 			id="searchInput"
 			bind:value={searchTerm}
 			name="search"
-			class="placeholder:text-brand text-content/80 block w-full bg-transparent py-2.5 text-sm focus:outline-none"
+			class="block w-full bg-transparent py-2.5 text-sm text-content/80 placeholder:text-brand focus:outline-none"
 			placeholder="enter your search term ..."
 			required
 		/>
@@ -74,22 +74,22 @@
 {#if searchData?.type === 'success'}
 	<div class="mt-12 flex w-full flex-col gap-6">
 		<p class="text-center">
-			Search results for <span class="text-content/80 italic">{`${searchTerm}`}</span>
+			Search results for <span class="italic text-content/80">{`${searchTerm}`}</span>
 		</p>
 		{#each searchData?.data?.publications as item}
-			<div class=" focus-within:bg-content/10 border-content/10 border-b p-2">
+			<div class=" border-b border-content/10 p-2 focus-within:bg-content/10">
 				<PrismicLink
 					document={item}
-					class="text-content hover:text-content/50 group flex items-end justify-between transition-colors duration-200   focus:outline-none"
+					class="group flex items-end justify-between text-content transition-colors duration-200 hover:text-content/50   focus:outline-none"
 				>
 					<div>
-						<h2 class="hover:text-content/50 font-bold">
+						<h2 class="font-bold hover:text-content/50">
 							<PrismicText field={item.data.company} />
 						</h2>
 						<p><PrismicText field={item.data.description} /></p>
 					</div>
 					<span
-						class="bg-brand-light/30 h-fit rounded-full px-3 py-1 text-sm font-light capitalize"
+						class="h-fit rounded-full bg-brand-light/30 px-3 py-1 text-sm font-light capitalize"
 					>
 						{item.type.replace(/_/g, ' ')}
 					</span>

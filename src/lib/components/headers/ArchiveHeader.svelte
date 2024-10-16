@@ -1,6 +1,6 @@
 <script lang="ts">
 	import clsx from 'clsx';
-	import Divider from './Divider.svelte';
+	import Divider from '../utilities/Divider.svelte';
 
 	type Variant = 'default' | 'compact' | 'spaced';
 	let className: string | undefined = undefined;

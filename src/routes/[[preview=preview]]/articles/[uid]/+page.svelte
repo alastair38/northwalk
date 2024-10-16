@@ -2,20 +2,20 @@
 	import { SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import type {
 		PeopleDocument,
 		CategoriesDocument,
 		ArticleCategoriesDocument
 	} from '../../../../prismicio-types.js';
-	import Categories from '$lib/components/Categories.svelte';
-	import Authors from '$lib/components/Authors.svelte';
-	import FeaturedImage from '$lib/components/FeaturedImage.svelte';
-	import MaskImage from '$lib/components/MaskImage.svelte';
-	import Heading1 from '$lib/components/Heading1.svelte';
-	import ArticleHeader from '$lib/components/ArticleHeader.svelte';
-	import DateTime from '$lib/components/DateTime.svelte';
-	import Excerpt from '$lib/components/Excerpt.svelte';
+	import Categories from '$lib/components/relatedContent/Categories.svelte';
+	import Authors from '$lib/components/relatedContent/Authors.svelte';
+	import FeaturedImage from '$lib/components/utilities/FeaturedImage.svelte';
+	import MaskImage from '$lib/components/backgrounds/MaskImage.svelte';
+	import Heading1 from '$lib/components/utilities/Heading1.svelte';
+	import ArticleHeader from '$lib/components/headers/ArticleHeader.svelte';
+	import DateTime from '$lib/components/utilities/DateTime.svelte';
+	import Excerpt from '$lib/components/utilities/Excerpt.svelte';
 
 	export let data;
 

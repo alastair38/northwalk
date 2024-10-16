@@ -2,14 +2,16 @@
 	import { PrismicText, SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
-	import Bounded from '$lib/components/Bounded.svelte';
-	import PageHeader from '$lib/components/PageHeader.svelte';
-	import Heading1 from '$lib/components/Heading1.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import PageHeader from '$lib/components/headers/PageHeader.svelte';
+	import Heading1 from '$lib/components/utilities/Heading1.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let data;
 </script>
 
 <Bounded tag="div" wide={true}>
+	<Dotted variant="faded" class="text-content/50" />
 	<PageHeader>
 		<Heading1>
 			<PrismicText field={data.page.data.title} />

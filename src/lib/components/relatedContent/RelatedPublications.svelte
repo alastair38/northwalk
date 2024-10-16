@@ -6,7 +6,7 @@
 		CaseStudyDocumentData,
 		PublicationsDocumentData,
 		Simplify
-	} from '../../prismicio-types';
+	} from '../../../prismicio-types';
 
 	export let pubs: (Content.AllDocumentTypes & { data: Simplify<PublicationsDocumentData> })[];
 	//export let publications: (Content.AllDocumentTypes & { data: Simplify<CaseStudyDocumentData> })[];

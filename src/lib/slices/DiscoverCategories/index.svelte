@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
 	import clsx from 'clsx';
 	import type { CategoriesDocument } from '../../../prismicio-types';
-	import Link from '$lib/components/Link.svelte';
-	import Divider from '$lib/components/Divider.svelte';
-	import Grid from '$lib/components/Grid.svelte';
+	import Link from '$lib/components/utilities/Link.svelte';
+	import Divider from '$lib/components/utilities/Divider.svelte';
+	import Grid from '$lib/components/layout/Grid.svelte';
 
 	export let slice: Content.DiscoverCategoriesSlice;
 

@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { PrismicImage, PrismicRichText } from '@prismicio/svelte';
 
-	import Link from '$lib/components/Link.svelte';
+	import Link from '$lib/components/utilities/Link.svelte';
 	export let slice: Content.LatestArticlesSlice;
 </script>
 

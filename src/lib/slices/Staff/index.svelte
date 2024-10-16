@@ -14,9 +14,9 @@
 	// Components
 	import { PrismicLink, PrismicImage } from '@prismicio/svelte';
 	import IconArrowRight from '~icons/ph/arrow-right-light';
-	import Aside from '$lib/components/Aside.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
-	import Grid from '$lib/components/Grid.svelte';
+	import Aside from '$lib/components/layout/Aside.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
+	import Grid from '$lib/components/layout/Grid.svelte';
 
 	export let slice: Content.StaffSlice;
 

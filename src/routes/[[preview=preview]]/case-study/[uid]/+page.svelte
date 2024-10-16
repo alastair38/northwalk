@@ -2,16 +2,15 @@
 	import { PrismicText, SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
-	import Bounded from '$lib/components/Bounded.svelte';
-
-	import TriangleGrid from '$lib/components/TriangleGrid.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 
 	import type { PeopleDocument } from '../../../../prismicio-types.js';
-	import Authors from '$lib/components/Authors.svelte';
-	import Excerpt from '$lib/components/Excerpt.svelte';
-	import ArticleHeader from '$lib/components/ArticleHeader.svelte';
-	import FeaturedImage from '$lib/components/FeaturedImage.svelte';
-	import Heading1 from '$lib/components/Heading1.svelte';
+	import Authors from '$lib/components/relatedContent/Authors.svelte';
+	import Excerpt from '$lib/components/utilities/Excerpt.svelte';
+	import ArticleHeader from '$lib/components/headers/ArticleHeader.svelte';
+	import FeaturedImage from '$lib/components/utilities/FeaturedImage.svelte';
+	import Heading1 from '$lib/components/utilities/Heading1.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let data;
 
@@ -26,7 +25,7 @@
 
 <Bounded>
 	<ArticleHeader>
-		<TriangleGrid />
+		<Dotted variant="faded" class="text-content/50" />
 		<Heading1>
 			<PrismicText field={data.page.data.company} />
 			<span class="mt-2 block text-lg font-normal text-accent-light">Case Study</span>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as prismicH from '@prismicio/helpers';
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import { type Content } from '@prismicio/client';
 	import { PrismicRichText } from '@prismicio/svelte';
 

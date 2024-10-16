@@ -1,8 +1,8 @@
 <script lang="ts">
 	// @ts-nocheck using this to supress incorrect error regarding the name property on the details element. Using the same name property groups multiple details elements together so they work as an accordion. Firefox does not currently support this. See browser implementation at https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details#browser_compatibility
 
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 
 	import type { Content } from '@prismicio/client';
 	import { PrismicRichText } from '@prismicio/svelte';

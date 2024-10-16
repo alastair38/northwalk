@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { PrismicRichText, PrismicImage } from '@prismicio/svelte';
-	import type { PostDocument } from '../../prismicio-types';
-	import Link from './Link.svelte';
-	import Heading2 from './Heading2.svelte';
+	import type { PostDocument } from '../../../prismicio-types';
+	import Heading2 from '../utilities/Heading2.svelte';
+	import Link from '../utilities/Link.svelte';
 
 	export let item: PostDocument<string>;
 </script>

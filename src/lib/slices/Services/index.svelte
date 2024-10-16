@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Grid from '$lib/components/Grid.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Grid from '$lib/components/layout/Grid.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 	import type { Content } from '@prismicio/client';
 
 	import IconGear from '~icons/ph/gear';
@@ -10,8 +10,9 @@
 	import IconAperture from '~icons/ph/aperture';
 	import IconBell from '~icons/ph/bell-ringing';
 	import IconCalendar from '~icons/ph/calendar';
-	import ButtonLink from '$lib/components/ButtonLink.svelte';
+	import ButtonLink from '$lib/components/utilities/ButtonLink.svelte';
 	import clsx from 'clsx';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let slice: Content.ServicesSlice;
 
@@ -49,11 +50,9 @@
 							: 'bg-white'
 					)}
 				>
-					<div
-						class={clsx(
-							'dotted mask-radial h-full w-full ',
-							slice.variation === 'default' ? 'text-accent/50' : 'text-content/30'
-						)}
+					<Dotted
+						variant="rounded"
+						class={clsx('', slice.variation === 'default' ? 'text-accent' : 'text-content')}
 					/>
 				</div>
 				{#if item.icon}

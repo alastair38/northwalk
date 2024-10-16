@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
+	import Link from '$lib/components/utilities/Link.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
@@ -60,14 +60,14 @@
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<div
-		class="bg-accent-light/20 outline-content/10 rounded-md p-8 shadow-2xl outline outline-1 outline-offset-4"
+		class="rounded-md bg-accent-light/20 p-8 shadow-2xl outline outline-1 outline-offset-4 outline-content/10"
 	>
-		<Heading2 class="text-content mb-3 text-center font-bold" variant="small" id="tabs-title"
+		<Heading2 class="mb-3 text-center font-bold text-content" variant="small" id="tabs-title"
 			>{slice.primary.title}</Heading2
 		>
 
 		{#if slice.primary.description}
-			<div class="text-content mb-6 text-balance text-center">
+			<div class="mb-6 text-balance text-center text-content">
 				<PrismicRichText field={slice.primary.description} />
 			</div>
 		{/if}
@@ -77,7 +77,7 @@
 			{#each slice.primary.tabs as item, i}
 				<li role="presentation">
 					<a
-						class={`uppecase rounded-md px-3 py-1 outline-offset-2 focus-visible:outline-content-100 ${activeTabValue === i ? 'bg-accent inline-flex text-base-100 shadow-sm hover:text-base-100/70' : 'bg-accent-light/40 text-content/80 hover:text-content'}`}
+						class={`uppecase focus-visible:outline-content-100 rounded-md px-3 py-1 outline-offset-2 ${activeTabValue === i ? 'text-base-100 hover:text-base-100/70 inline-flex bg-accent shadow-sm' : 'bg-accent-light/40 text-content/80 hover:text-content'}`}
 						on:keydown={keyboardNav}
 						on:click|preventDefault={handleClick(i)}
 						id={`tab-${i}`}
@@ -97,7 +97,7 @@
 			<!-- {#if activeTabValue === i} -->
 			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<div
-				class={`text-content outline-content-100/\/80 prose ${js && 'opacity-0'} mt-6 h-max w-full max-w-full space-y-6 rounded-sm outline-offset-4 focus-visible:outline prose-a:no-underline`}
+				class={`outline-content-100/\/80 prose text-content ${js && 'opacity-0'} mt-6 h-max w-full max-w-full space-y-6 rounded-sm outline-offset-4 focus-visible:outline prose-a:no-underline`}
 				id={`target-${i}`}
 				aria-labelledby={`tab-${i}`}
 				hidden={js && activeTabValue !== i ? true : false}

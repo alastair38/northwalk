@@ -1,12 +1,13 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import clsx from 'clsx';
 
 	import type { CaseStudyDocument } from '../../../prismicio-types';
 	import type { Content } from '@prismicio/client';
-	import Heading2 from '$lib/components/Heading2.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
+	import Link from '$lib/components/utilities/Link.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let slice: Content.CaseStudiesSlice;
 
@@ -19,11 +20,13 @@
 	wide={true}
 	class={clsx(
 		'relative',
-		slice.variation === 'dark' ? 'bg-gradient-to-b from-content-dark to-brand-dark text-base' : '',
+		slice.variation === 'dark' ? ' bg-gradient-to-b from-content-dark to-brand-dark text-base' : '',
 		slice.variation === 'dark' && slice.primary.top_margin && 'mt-12 md:mt-16'
 	)}
->
-	<div class="z-10">
+	>{#if slice.variation === 'dark'}
+		<Dotted variant="rounded" class="text-highlight-400" />
+	{/if}
+	<div class="z-0">
 		<Heading2 variant="impact" class="max-w-3xl text-center">
 			<PrismicText field={slice.primary.heading} /></Heading2
 		>
@@ -32,10 +35,6 @@
 			<PrismicRichText field={slice.primary.body} />
 		</div>
 	</div>
-
-	{#if slice.variation === 'dark'}
-		<div class="dotted mask-radial absolute inset-0 z-0 text-highlight-400/30"></div>
-	{/if}
 
 	<div class="mt-16 grid gap-16 md:mt-20">
 		{#each caseStudies as caseStudy, index}

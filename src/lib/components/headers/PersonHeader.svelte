@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { PrismicImage, PrismicLink, PrismicRichText } from '@prismicio/svelte';
-	import TriangleGrid from './TriangleGrid.svelte';
+
 	import IconX from '~icons/ph/x-logo';
 	import IconInsta from '~icons/ph/instagram-logo';
 	import IconEmail from '~icons/ph/envelope-simple-light';
 	import type { Content } from '@prismicio/client';
-	import Heading1 from './Heading1.svelte';
+	import Heading1 from '../utilities/Heading1.svelte';
 
 	export let data: Content.PeopleDocument;
 

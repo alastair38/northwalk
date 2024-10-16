@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import ButtonLink from '$lib/components/ButtonLink.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import ButtonLink from '$lib/components/utilities/ButtonLink.svelte';
 	import clsx from 'clsx';
 	import SpanHeading from './SpanHeading.svelte';
 	import type { Content } from '@prismicio/client';
@@ -8,8 +8,9 @@
 
 	import IconGear from '~icons/ph/gear';
 	import IconCycle from '~icons/ph/arrows-clockwise';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 	import { asText } from '@prismicio/helpers';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	/** @type {import("@prismicio/client").Content.ShowcaseSlice} */
 	export let slice: Content.ShowcaseSlice;
@@ -26,12 +27,14 @@
 	data-slice-variation={slice.variation}
 	class="relative"
 >
+	<Dotted variant="rounded" class="text-brand" />
+
 	{#if slice.primary.heading}
 		<Heading2 class="mb-16 max-w-2xl text-center font-black">
 			{slice.primary.heading}
 		</Heading2>
 	{/if}
-	<div class="relative grid max-w-5xl items-center gap-8 text-base lg:grid-cols-6 lg:py-12">
+	<div class="relative grid items-center gap-8 text-base lg:grid-cols-6 lg:py-12">
 		<div class="md:col-span-3">
 			{#if slice.primary.icon}
 				<div aria-hidden="true" class="w-fit rounded-lg bg-brand p-2 text-2xl">

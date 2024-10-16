@@ -1,13 +1,14 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import ButtonLink from '$lib/components/ButtonLink.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import ButtonLink from '$lib/components/utilities/ButtonLink.svelte';
 
 	import EmphasisedText from './EmphasisedText.svelte';
 
-	import Heading1RichText from '$lib/components/Heading1RichText.svelte';
+	import Heading1RichText from '$lib/components/utilities/Heading1RichText.svelte';
 	import clsx from 'clsx';
 	import type { Content } from '@prismicio/client';
 	import { PrismicRichText, PrismicImage, PrismicText } from '@prismicio/svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let slice: Content.HeroSlice;
 </script>
@@ -21,7 +22,10 @@
 				: 'bg-gradient-to-b from-base-light to-base'
 		)}
 	>
-		<div class="dotted mask-radial animate- h-full w-full text-accent/50" />
+		<Dotted
+			variant="rounded"
+			class={clsx('', slice.variation === 'dark' ? 'text-accent' : 'text-content')}
+		/>
 	</div>
 
 	<div class={clsx('text-center', slice.variation === 'dark' && 'text-base')}>

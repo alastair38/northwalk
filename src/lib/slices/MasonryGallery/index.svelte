@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
-	import Heading2 from '$lib/components/Heading2.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
+	import Heading2 from '$lib/components/utilities/Heading2.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage } from '@prismicio/svelte';
 
@@ -8,9 +8,9 @@
 </script>
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<div class="border-content/10 w-full space-y-6 rounded-md border p-8">
+	<div class="w-full space-y-6 rounded-md border border-content/10 p-8">
 		{#if slice.primary.title}
-			<Heading2 class="text-content font-black" variant="xsmall">{slice.primary.title}</Heading2>
+			<Heading2 class="font-black text-content" variant="xsmall">{slice.primary.title}</Heading2>
 		{/if}
 
 		{#if slice.primary.description}
@@ -25,7 +25,7 @@
 					>
 						<PrismicImage class="object-cover " field={item.image} />
 
-						<figcaption class="bg-base/90 absolute bottom-0 left-0 right-0 p-4">
+						<figcaption class="absolute bottom-0 left-0 right-0 bg-base/90 p-4">
 							{item.caption}
 						</figcaption>
 					</figure>

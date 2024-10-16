@@ -2,7 +2,7 @@
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import IconArrowRight from '~icons/ph/arrow-right';
 	import type { Content, Query } from '@prismicio/client';
-	import Link from './Link.svelte';
+	import Link from '../utilities/Link.svelte';
 
 	export let articles: (Content.AllDocumentTypes & {
 		data: Content.PostDocumentData | Content.PublicationsDocumentData;

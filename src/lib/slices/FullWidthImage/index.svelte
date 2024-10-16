@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FeaturedImage from '$lib/components/FeaturedImage.svelte';
+	import FeaturedImage from '$lib/components/utilities/FeaturedImage.svelte';
 	import type { Content } from '@prismicio/client';
 
 	export let slice: Content.FullWidthImageSlice;

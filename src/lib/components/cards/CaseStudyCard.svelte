@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { PrismicRichText, PrismicText, PrismicImage } from '@prismicio/svelte';
-	import type { CaseStudyDocument } from '../../prismicio-types';
-	import Link from './Link.svelte';
-	import Heading2 from './Heading2.svelte';
+	import type { CaseStudyDocument } from '../../../prismicio-types';
+	import Link from '../utilities/Link.svelte';
+	import Heading2 from '../utilities/Heading2.svelte';
 	import { asText } from '@prismicio/helpers';
 
 	export let item: CaseStudyDocument<string>;

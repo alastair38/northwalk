@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
-	import Grid from '$lib/components/Grid.svelte';
-	import Heading1 from '$lib/components/Heading1.svelte';
-	import ArchiveHeader from '$lib/components/ArchiveHeader.svelte';
+	import Grid from '$lib/components/layout/Grid.svelte';
+	import Heading1 from '$lib/components/utilities/Heading1.svelte';
+	import ArchiveHeader from '$lib/components/headers/ArchiveHeader.svelte';
 
-	import ArticleCard from '$lib/components/ArticleCard.svelte';
-	import Pagination from '../Pagination.svelte';
+	import ArticleCard from '$lib/components/cards/ArticleCard.svelte';
+	import Pagination from '../layout/Pagination.svelte';
 	import { filteredMeta } from '$lib/utils';
 	import { page } from '$app/stores';
-	import CaseStudyCard from '../CaseStudyCard.svelte';
-	import PublicationCard from '../PublicationCard.svelte';
+	import CaseStudyCard from '../cards/CaseStudyCard.svelte';
+	import PublicationCard from '../cards/PublicationCard.svelte';
 
 	export let data;
 

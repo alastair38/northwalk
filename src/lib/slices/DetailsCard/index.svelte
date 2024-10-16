@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Bounded from '$lib/components/Bounded.svelte';
+	import Bounded from '$lib/components/layout/Bounded.svelte';
 	import type { Content } from '@prismicio/client';
 	import { PrismicImage, PrismicRichText, PrismicText } from '@prismicio/svelte';
 
