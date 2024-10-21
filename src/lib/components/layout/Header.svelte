@@ -4,7 +4,7 @@
 	import IconClose from '~icons/ph/x-bold';
 	import IconMenu from '~icons/ph/list-bold';
 
-	import WordMark from '../WordMark.svelte';
+	import WordMark from '../design/Logo.svelte';
 	import ButtonLink from '../utilities/ButtonLink.svelte';
 	import clsx from 'clsx';
 	import { asLink } from '@prismicio/client';

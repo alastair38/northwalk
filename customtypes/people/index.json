@@ -8,7 +8,7 @@
 		"Main": {
 			"uid": {
 				"config": {
-					"label": "UID"
+					"label": "Slug"
 				},
 				"type": "UID"
 			},
@@ -19,6 +19,13 @@
 					"placeholder": ""
 				}
 			},
+			"email": {
+				"type": "Text",
+				"config": {
+					"label": "Email",
+					"placeholder": ""
+				}
+			},
 			"work_title": {
 				"type": "Text",
 				"config": {
@@ -26,11 +33,13 @@
 					"placeholder": ""
 				}
 			},
-			"email": {
-				"type": "Text",
+			"biography": {
+				"type": "StructuredText",
 				"config": {
-					"label": "Email",
-					"placeholder": ""
+					"label": "Biography",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"multi": "paragraph,strong,em"
 				}
 			},
 			"image": {
@@ -41,13 +50,13 @@
 					"thumbnails": []
 				}
 			},
-			"biography": {
-				"type": "StructuredText",
+			"showbackground": {
+				"type": "Boolean",
 				"config": {
-					"label": "Biography",
-					"placeholder": "",
-					"allowTargetBlank": true,
-					"multi": "paragraph,strong,em"
+					"label": "Set image as background",
+					"placeholder_false": "No",
+					"placeholder_true": "Yes",
+					"default_value": false
 				}
 			},
 			"slices": {

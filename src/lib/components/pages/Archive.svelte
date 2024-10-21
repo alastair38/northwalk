@@ -11,6 +11,7 @@
 	import { page } from '$app/stores';
 	import CaseStudyCard from '../cards/CaseStudyCard.svelte';
 	import PublicationCard from '../cards/PublicationCard.svelte';
+	import Dotted from '../backgrounds/dotted.svelte';
 
 	export let data;
 
@@ -21,6 +22,7 @@
 </script>
 
 <Bounded tag="div" wide={true}>
+	<Dotted variant="faded" class="text-content/50" />
 	<ArchiveHeader>
 		<Heading1>
 			{#if data.page?.data?.title}

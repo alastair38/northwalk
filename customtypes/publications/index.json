@@ -6,6 +6,12 @@
 	"status": true,
 	"json": {
 		"Main": {
+			"uid": {
+				"config": {
+					"label": "Slug"
+				},
+				"type": "UID"
+			},
 			"title": {
 				"type": "Text",
 				"config": {
@@ -13,18 +19,22 @@
 					"placeholder": ""
 				}
 			},
-			"uid": {
-				"config": {
-					"label": "UID"
-				},
-				"type": "UID"
-			},
+
 			"image": {
 				"type": "Image",
 				"config": {
 					"label": "Publication Image",
 					"constraint": {},
 					"thumbnails": []
+				}
+			},
+			"showbackground": {
+				"type": "Boolean",
+				"config": {
+					"label": "Set publication image as background",
+					"placeholder_false": "false",
+					"placeholder_true": "true",
+					"default_value": false
 				}
 			},
 			"authors": {

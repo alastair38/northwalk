@@ -1,7 +1,7 @@
 <script>
 	import { PrismicLink } from '@prismicio/svelte';
 
-	import WordMark from '../WordMark.svelte';
+	import WordMark from '../design/Logo.svelte';
 
 	/** @type {import("@prismicio/client").Content.SettingsDocument} */
 	export let settings;

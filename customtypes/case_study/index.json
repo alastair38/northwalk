@@ -8,7 +8,7 @@
 		"Main": {
 			"uid": {
 				"config": {
-					"label": "UID"
+					"label": "Slug"
 				},
 				"type": "UID"
 			},
@@ -38,12 +38,13 @@
 					"thumbnails": []
 				}
 			},
-			"author": {
-				"type": "Link",
+			"showbackground": {
+				"type": "Boolean",
 				"config": {
-					"label": "Author",
-					"select": "document",
-					"customtypes": ["people"]
+					"label": "Set featured image as background",
+					"placeholder_false": "false",
+					"placeholder_true": "true",
+					"default_value": false
 				}
 			},
 			"authors": {

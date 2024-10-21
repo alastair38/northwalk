@@ -113,15 +113,16 @@ interface CaseStudyDocumentData {
 	image: prismic.ImageField<never>;
 
 	/**
-	 * Author field in *Case Study*
+	 * Set featured image as background field in *Case Study*
 	 *
-	 * - **Field Type**: Content Relationship
+	 * - **Field Type**: Boolean
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: case_study.author
+	 * - **Default Value**: false
+	 * - **API ID Path**: case_study.showbackground
 	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
 	 */
-	author: prismic.ContentRelationshipField<'people'>;
+	showbackground: prismic.BooleanField;
 
 	/**
 	 * Authors field in *Case Study*
@@ -282,6 +283,18 @@ interface PageDocumentData {
 	title: prismic.RichTextField;
 
 	/**
+	 * Show meta image as background field in *Page*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: page.showbackground
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	showbackground: prismic.BooleanField;
+
+	/**
 	 * Slice Zone field in *Page*
 	 *
 	 * - **Field Type**: Slice Zone
@@ -393,6 +406,17 @@ interface PeopleDocumentData {
 	name: prismic.KeyTextField;
 
 	/**
+	 * Email field in *People*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: people.email
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	email: prismic.KeyTextField;
+
+	/**
 	 * Work Title field in *People*
 	 *
 	 * - **Field Type**: Text
@@ -404,15 +428,15 @@ interface PeopleDocumentData {
 	work_title: prismic.KeyTextField;
 
 	/**
-	 * Email field in *People*
+	 * Biography field in *People*
 	 *
-	 * - **Field Type**: Text
+	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.email
+	 * - **API ID Path**: people.biography
 	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	email: prismic.KeyTextField;
+	biography: prismic.RichTextField;
 
 	/**
 	 * Image field in *People*
@@ -426,15 +450,16 @@ interface PeopleDocumentData {
 	image: prismic.ImageField<never>;
 
 	/**
-	 * Biography field in *People*
+	 * Set image as background field in *People*
 	 *
-	 * - **Field Type**: Rich Text
+	 * - **Field Type**: Boolean
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.biography
+	 * - **Default Value**: false
+	 * - **API ID Path**: people.showbackground
 	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
 	 */
-	biography: prismic.RichTextField;
+	showbackground: prismic.BooleanField;
 
 	/**
 	 * Slice Zone field in *People*
@@ -548,6 +573,18 @@ interface PostDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * ShowBackground field in *Post*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: post.showbackground
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	showbackground: prismic.BooleanField;
 
 	/**
 	 * Authors field in *Post*
@@ -686,6 +723,18 @@ interface PublicationsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Set publication image as background field in *Publications*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: publications.showbackground
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	showbackground: prismic.BooleanField;
 
 	/**
 	 * Authors field in *Publications*
@@ -3194,6 +3243,17 @@ declare module '@prismicio/client' {
 			repositoryNameOrEndpoint: string,
 			options?: prismic.ClientConfig
 		): prismic.Client<AllDocumentTypes>;
+	}
+
+	interface CreateWriteClient {
+		(
+			repositoryNameOrEndpoint: string,
+			options: prismic.WriteClientConfig
+		): prismic.WriteClient<AllDocumentTypes>;
+	}
+
+	interface CreateMigration {
+		(): prismic.Migration<AllDocumentTypes>;
 	}
 
 	namespace Content {

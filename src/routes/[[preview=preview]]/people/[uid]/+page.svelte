@@ -7,6 +7,7 @@
 	import MaskImage from '$lib/components/backgrounds/MaskImage.svelte';
 	import RelatedContent from '$lib/components/relatedContent/RelatedContent.svelte';
 	import RelatedPublications from '$lib/components/relatedContent/RelatedPublications.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let data;
 
@@ -25,8 +26,14 @@
 	);
 </script>
 
-<MaskImage image={data.page.data.image} />
+{#if data.page.data.showbackground}
+	<MaskImage image={data.page.data.image} />
+{/if}
+
 <Bounded tag="article">
+	{#if !data.page.data.showbackground}
+		<Dotted variant="faded" class="text-content/50" />
+	{/if}
 	<PersonHeader data={data.page} />
 
 	{#if articles.length !== 0}

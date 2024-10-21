@@ -11,6 +11,7 @@
 	import FeaturedImage from '$lib/components/utilities/FeaturedImage.svelte';
 	import Heading1 from '$lib/components/utilities/Heading1.svelte';
 	import Dotted from '$lib/components/backgrounds/dotted.svelte';
+	import MaskImage from '$lib/components/backgrounds/MaskImage.svelte';
 
 	export let data;
 
@@ -23,12 +24,22 @@
 	);
 </script>
 
+{#if data.page.data.showbackground}
+	<MaskImage image={data.page.data.image} class="mask opacity-10 mix-blend-multiply" />
+{/if}
+
 <Bounded>
 	<ArticleHeader>
-		<Dotted variant="faded" class="text-content/50" />
+		{#if !data.page.data.showbackground}
+			<Dotted variant="faded" class="text-content/50" />
+		{/if}
 		<Heading1>
 			<PrismicText field={data.page.data.company} />
-			<span class="mt-2 block text-lg font-normal text-accent-light">Case Study</span>
+			<span
+				class="relative mx-auto mt-2 block w-fit text-lg leading-none text-brand before:absolute before:-left-3 before:content-['['] after:absolute after:-right-3 after:content-[']']"
+			>
+				Case Study
+			</span>
 		</Heading1>
 		{#if authors.length > 0}
 			<Authors class="justify-center" {authors} />

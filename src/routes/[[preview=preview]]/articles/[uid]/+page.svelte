@@ -16,6 +16,7 @@
 	import ArticleHeader from '$lib/components/headers/ArticleHeader.svelte';
 	import DateTime from '$lib/components/utilities/DateTime.svelte';
 	import Excerpt from '$lib/components/utilities/Excerpt.svelte';
+	import Dotted from '$lib/components/backgrounds/dotted.svelte';
 
 	export let data;
 
@@ -36,11 +37,17 @@
 	);
 </script>
 
-<MaskImage image={data.page.data.image} class="mask opacity-10 mix-blend-multiply" />
+{#if data.page.data.showbackground}
+	<MaskImage image={data.page.data.image} class="mask opacity-10 mix-blend-multiply" />
+{/if}
+
 <Bounded tag="article">
+	{#if !data.page.data.showbackground}
+		<Dotted variant="faded" class="text-content/50" />
+	{/if}
 	<ArticleHeader>
 		<DateTime dateTime={data.page.first_publication_date} />
-		<Heading1>{data.page.data.title}</Heading1>
+		<Heading1 class="leading-tight">{data.page.data.title}</Heading1>
 		{#if authors.length > 0}
 			<Authors class="justify-center" {authors} />
 		{/if}

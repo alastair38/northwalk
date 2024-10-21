@@ -9,7 +9,7 @@
 			"uid": {
 				"type": "UID",
 				"config": {
-					"label": "UID"
+					"label": "Slug"
 				}
 			},
 			"title": {
@@ -34,6 +34,15 @@
 					"label": "Featured Image",
 					"constraint": {},
 					"thumbnails": []
+				}
+			},
+			"showbackground": {
+				"type": "Boolean",
+				"config": {
+					"label": "ShowBackground",
+					"placeholder_false": "false",
+					"placeholder_true": "true",
+					"default_value": false
 				}
 			},
 			"authors": {
